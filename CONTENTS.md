@@ -18,7 +18,7 @@
 
 8. [Understanding Member Behavior](book/part-03-member-digital-experiences/chapter-08-understanding-member-behavior.md)
 9. [Predicting Digital Journey Abandonment](book/part-03-member-digital-experiences/chapter-09-predicting-digital-journey-abandonment.md)
-10. Conversion Prediction
+10. [Conversion Prediction](book/part-03-member-digital-experiences/chapter-10-conversion-prediction.md)
 11. Member Segmentation
 
 ## Part IV — Machine Learning for Banking Operations

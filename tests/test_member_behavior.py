@@ -22,8 +22,8 @@ def sessions(events): return group_events_by_session(events)
 
 
 def test_fixture_loads_parsed_valid_minimal_events(events):
-    assert len(events) == 3248
-    assert len({event.session_id for event in events}) == 390
+    assert len(events) == 6228
+    assert len({event.session_id for event in events}) == 890
     assert all(event.timestamp.tzinfo is not None for event in events)
     assert {event.event_name for event in events} <= EVENT_VOCABULARY
     assert {event.channel for event in events} == VALID_CHANNELS
@@ -56,12 +56,12 @@ def test_session_summary_counts_duration_and_observed_flags(sessions):
 def test_aggregate_counts_funnel_and_statistics(events, sessions):
     counts = count_events(events)
     assert sum(counts.values()) == len(events)
-    assert counts["session_started"] == counts["session_ended"] == 390
+    assert counts["session_started"] == counts["session_ended"] == 890
     funnel = calculate_transfer_funnel(sessions)
     assert funnel == {"transfer_started": 330, "recipient_selected": 330, "transfer_reviewed": 245, "transfer_completed": 150}
     summaries = summarize_sessions(sessions)
     stats = calculate_behavior_statistics(summaries.values())
-    assert stats.total_sessions == 390
+    assert stats.total_sessions == 890
     assert stats.sessions_with_transfer_started == 330
     assert stats.sessions_with_transfer_completed == 150
     assert stats.sessions_with_verification_started == 30
