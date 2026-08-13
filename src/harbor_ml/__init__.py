@@ -94,3 +94,41 @@ __all__ += [
     "score_observation",
     "train_anomaly_detector",
 ]
+
+from .incident_classifier import (
+    INCIDENT_CLASSES,
+    INCIDENT_FEATURES,
+    INCIDENT_RANDOM_STATE,
+    IncidentDatasetSplit,
+    IncidentEvaluation,
+    IncidentObservation,
+    IncidentPrediction,
+    build_incident_classifier,
+    build_incident_features,
+    build_incident_targets,
+    evaluate_incident_classifier,
+    load_incident_dataset,
+    predict_incident,
+    predict_incident_probabilities,
+    split_incident_dataset,
+    train_incident_classifier,
+)
+
+__all__ += [
+    "INCIDENT_CLASSES",
+    "INCIDENT_FEATURES",
+    "INCIDENT_RANDOM_STATE",
+    "IncidentDatasetSplit",
+    "IncidentEvaluation",
+    "IncidentObservation",
+    "IncidentPrediction",
+    "build_incident_classifier",
+    "build_incident_features",
+    "build_incident_targets",
+    "evaluate_incident_classifier",
+    "load_incident_dataset",
+    "predict_incident",
+    "predict_incident_probabilities",
+    "split_incident_dataset",
+    "train_incident_classifier",
+]

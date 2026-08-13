@@ -2,7 +2,7 @@
 
 > Part II — Machine Learning for Production Troubleshooting
 
-[Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 3](../part-01-ml-assisted-engineering/chapter-03-the-machine-learning-pipeline.md)
+[Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 3](../part-01-ml-assisted-engineering/chapter-03-the-machine-learning-pipeline.md) · [Next: Chapter 5](chapter-05-incident-classification.md)
 
 ## Central question
 
@@ -454,4 +454,4 @@ INCIDENT CLASSIFICATION
 What kind of known incident does it resemble?
 ```
 
-Chapter 5 remains planned and is not implemented here.
+Continue to [Chapter 5 — Incident Classification](chapter-05-incident-classification.md) to train and evaluate a multi-class model over known, fictional incident patterns.
