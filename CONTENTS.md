@@ -12,7 +12,7 @@
 4. [Detecting Abnormal Application Behavior](book/part-02-production-troubleshooting/chapter-04-detecting-abnormal-application-behavior.md)
 5. [Incident Classification](book/part-02-production-troubleshooting/chapter-05-incident-classification.md)
 6. [Finding the Signals That Matter](book/part-02-production-troubleshooting/chapter-06-finding-the-signals-that-matter.md)
-7. Predicting Integration Failures
+7. [Predicting Integration Failures](book/part-02-production-troubleshooting/chapter-07-predicting-integration-failures.md)
 
 ## Part III — Machine Learning for Member Digital Experiences
 
