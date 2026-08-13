@@ -361,4 +361,4 @@ Will this journey complete?
 
 A future target might be `journey_completed` or `journey_abandoned`, but it is not implemented here. Chapter 9 must define prediction time carefully: `transfer_completed` cannot be a feature for predicting whether that transfer will complete. That would leak the answer.
 
-[Back to the Part III overview](README.md) · [Back to complete contents](../../CONTENTS.md)
+[Back to the Part III overview](README.md) · [Back to complete contents](../../CONTENTS.md) · [Next: Chapter 9](chapter-09-predicting-digital-journey-abandonment.md)

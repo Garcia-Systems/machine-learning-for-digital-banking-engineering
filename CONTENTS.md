@@ -17,7 +17,7 @@
 ## Part III — Machine Learning for Member Digital Experiences
 
 8. [Understanding Member Behavior](book/part-03-member-digital-experiences/chapter-08-understanding-member-behavior.md)
-9. Predicting Digital Journey Abandonment
+9. [Predicting Digital Journey Abandonment](book/part-03-member-digital-experiences/chapter-09-predicting-digital-journey-abandonment.md)
 10. Conversion Prediction
 11. Member Segmentation
 

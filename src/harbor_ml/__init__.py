@@ -95,7 +95,25 @@ __all__ += [
     "train_anomaly_detector",
 ]
 
-from .incident_classifier import (
+from .journey_abandonment import (  # noqa: E402
+    BOOLEAN_JOURNEY_FEATURES, CATEGORICAL_JOURNEY_FEATURES, JOURNEY_FEATURES,
+    JOURNEY_RANDOM_STATE, JOURNEY_TARGET, NUMERIC_JOURNEY_FEATURES,
+    JourneyDatasetSplit, JourneyEvaluation, JourneySnapshot, PartialJourneyState,
+    build_abandonment_pipeline, build_journey_features, build_journey_targets,
+    build_transfer_snapshots, classify_abandonment, evaluate_abandonment_model,
+    predict_abandonment_probability, split_journey_dataset, train_abandonment_model,
+)
+
+__all__ += [
+    "BOOLEAN_JOURNEY_FEATURES", "CATEGORICAL_JOURNEY_FEATURES", "JOURNEY_FEATURES",
+    "JOURNEY_RANDOM_STATE", "JOURNEY_TARGET", "NUMERIC_JOURNEY_FEATURES",
+    "JourneyDatasetSplit", "JourneyEvaluation", "JourneySnapshot", "PartialJourneyState",
+    "build_abandonment_pipeline", "build_journey_features", "build_journey_targets",
+    "build_transfer_snapshots", "classify_abandonment", "evaluate_abandonment_model",
+    "predict_abandonment_probability", "split_journey_dataset", "train_abandonment_model",
+]
+
+from .incident_classifier import (  # noqa: E402
     INCIDENT_CLASSES,
     INCIDENT_FEATURES,
     INCIDENT_RANDOM_STATE,
