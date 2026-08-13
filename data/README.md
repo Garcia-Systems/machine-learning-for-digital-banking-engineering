@@ -1,4 +1,6 @@
 # Educational data
 
-Future chapters will place small, synthetic datasets here. All data will describe the fictional Harbor Federal Credit Union environment and will be created solely for education. Do not add real member, transaction, credential, vendor, or proprietary banking data.
-
+Datasets here are small, synthetic, and created solely for education. Chapter 1's
+`harbor_incident_telemetry.csv` describes fictional operational measurements; it
+contains no member or transaction records. Do not add real member, transaction,
+credential, vendor, or proprietary banking data.

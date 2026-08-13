@@ -25,22 +25,23 @@ The book begins with a transparent threshold-based detector, then moves toward t
 
 Examples target Python 3.11+ and favor small, typed, deterministic components. Chapter 0 uses only the Python standard library; tests use `pytest`.
 
-Run the first example and its tests from the repository root:
+Run the Chapter 0 and Chapter 1 examples and their tests from the repository root:
 
 ```bash
 python examples/chapter_00_thresholds.py
+python examples/chapter_01_telemetry.py
 pytest
 ```
 
-The example output deliberately demonstrates traditional programming rather than a trained model. Later chapters will introduce ML dependencies only when the engineering problem justifies them.
+The examples deliberately demonstrate traditional programming and descriptive statistics rather than a trained model. Later chapters will introduce ML dependencies only when the engineering problem justifies them.
 
 ## Repository map
 
 - [`CONTENTS.md`](CONTENTS.md) — complete roadmap for the book.
-- [`book/`](book/) — chapter narrative; only Chapter 0 is written initially.
+- [`book/`](book/) — chapter narrative; Chapters 0 and 1 are implemented.
 - [`src/harbor_ml/`](src/harbor_ml/) — reusable, typed Python components.
 - [`examples/`](examples/) — command-line examples.
 - [`tests/`](tests/) — automated checks for executable material.
-- [`data/`](data/) — documentation and, in future chapters, synthetic educational data.
+- [`data/`](data/) — small synthetic educational data fixtures and their documentation.
 - `docs/` — reserved for supporting documentation as the book grows.
 

@@ -1,5 +1,7 @@
 # Chapter 0 — The ML-Assisted Full-Stack Developer
 
+[← Part I contents](README.md) · [Book contents](../../CONTENTS.md) · [Chapter 1 →](chapter-01-the-digital-banking-data-landscape.md)
+
 ## Opening scenario: Monday morning at Harbor
 
 It is Monday morning at Harbor Federal Credit Union. Members begin reporting that a transfer workflow sometimes spins and then fails. Support tickets are intermittent: some members complete the workflow, and the primary health check remains green. At first, the system appears healthy.
