@@ -25,7 +25,7 @@ The book begins with a transparent threshold-based detector, then moves toward t
 
 Examples target Python 3.11+ and favor small, typed, deterministic components. Chapter 0 uses only the Python standard library; tests use `pytest`.
 
-Install the Chapter 3 ML dependency, then run the implemented Part I examples and tests from the repository root:
+Install the ML dependency, then run the implemented Part I and Chapter 4 examples and tests from the repository root:
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -33,15 +33,16 @@ python examples/chapter_00_thresholds.py
 python examples/chapter_01_telemetry.py
 python examples/chapter_02_problem_framing.py
 python examples/chapter_03_request_failure_model.py
+python examples/chapter_04_anomaly_detection.py
 pytest
 ```
 
-Chapters 0–2 deliberately use traditional programming and descriptive statistics. Chapter 3 introduces scikit-learn narrowly to train the book's first small model. All fixtures and results are fictional educational material, not production banking evidence.
+Chapters 0–2 deliberately use traditional programming and descriptive statistics. Chapter 3 introduces scikit-learn narrowly to train the book's first small model; Chapter 4 uses it for anomaly detection over a normal telemetry baseline. All fixtures and results are fictional educational material, not production banking evidence.
 
 ## Repository map
 
 - [`CONTENTS.md`](CONTENTS.md) — complete roadmap for the book.
-- [`book/`](book/) — chapter narrative; Part I (Chapters 0 through 3) is implemented.
+- [`book/`](book/) — chapter narrative; Part I and Chapter 4, the first chapter of Part II, are implemented.
 - [`src/harbor_ml/`](src/harbor_ml/) — reusable, typed Python components.
 - [`examples/`](examples/) — command-line examples.
 - [`tests/`](tests/) — automated checks for executable material.

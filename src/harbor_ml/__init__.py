@@ -63,3 +63,34 @@ __all__ = [
     "summarize_telemetry",
     "train_model",
 ]
+
+# Chapter 4 names are explicit to avoid ambiguity with Chapter 3's features.
+from .anomaly_detection import (
+    ANOMALY_CONTAMINATION,
+    ANOMALY_FEATURE_NAMES,
+    ANOMALY_RANDOM_STATE,
+    AnomalyResult,
+    AnomalyScenario,
+    build_anomaly_detector,
+    build_anomaly_features,
+    load_anomaly_scenarios,
+    load_normal_telemetry,
+    observation_features,
+    score_observation,
+    train_anomaly_detector,
+)
+
+__all__ += [
+    "ANOMALY_CONTAMINATION",
+    "ANOMALY_FEATURE_NAMES",
+    "ANOMALY_RANDOM_STATE",
+    "AnomalyResult",
+    "AnomalyScenario",
+    "build_anomaly_detector",
+    "build_anomaly_features",
+    "load_anomaly_scenarios",
+    "load_normal_telemetry",
+    "observation_features",
+    "score_observation",
+    "train_anomaly_detector",
+]

@@ -449,4 +449,4 @@ Part I ends here: the reader has moved from deciding whether ML is appropriate t
 
 > What happens when Harbor does not already know what kind of failure to look for?
 
-The supervised request-failure model had historical labels. Production incidents can instead involve behavior developers have never labeled. That leads naturally to **anomaly detection**. Chapter 4 remains part of the roadmap; it is not implemented here.
+The supervised request-failure model had historical labels. Production incidents can instead involve behavior developers have never labeled. That leads naturally to **anomaly detection**. Continue to [Chapter 4](../part-02-production-troubleshooting/chapter-04-detecting-abnormal-application-behavior.md) for the first chapter of Part II and its executable laboratory.

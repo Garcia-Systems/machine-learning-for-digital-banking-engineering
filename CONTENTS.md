@@ -9,7 +9,7 @@
 
 ## Part II — Machine Learning for Production Troubleshooting
 
-4. Detecting Abnormal Application Behavior
+4. [Detecting Abnormal Application Behavior](book/part-02-production-troubleshooting/chapter-04-detecting-abnormal-application-behavior.md)
 5. Incident Classification
 6. Finding the Signals That Matter
 7. Predicting Integration Failures

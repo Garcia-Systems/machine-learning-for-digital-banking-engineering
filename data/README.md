@@ -9,3 +9,11 @@ Chapters 2 and 3 use `harbor_request_outcomes.csv`, which contains 30
 deterministic, fictional vendor-request observations and binary teaching labels.
 It makes feature/target separation and a small train/test pipeline executable; it
 is not statistically realistic and does not represent a real banking distribution.
+
+Chapter 4 uses `harbor_normal_telemetry.csv`, a committed baseline of 200
+deterministically generated ordinary-operation observations, and
+`harbor_anomaly_scenarios.csv`, six named evaluation observations kept out of
+training. The scenarios cover normal behavior, vendor slowdown, queue pressure,
+broad pressure, and a subtle multivariate combination. The fixtures are stable for
+the executable laboratory; they are not estimates of real production distributions
+or Harbor's true incident rate.
