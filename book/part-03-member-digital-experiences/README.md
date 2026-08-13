@@ -6,8 +6,8 @@ about interactions with Harbor's web and mobile applications.
 - [Chapter 8 — Understanding Member Behavior](chapter-08-understanding-member-behavior.md)
 - [Chapter 9 — Predicting Digital Journey Abandonment](chapter-09-predicting-digital-journey-abandonment.md)
 - [Chapter 10 — Conversion Prediction](chapter-10-conversion-prediction.md)
-- Chapter 11 — Member Segmentation *(planned)*
+- [Chapter 11 — Member Segmentation](chapter-11-member-segmentation.md)
 
-Chapters 8–10 are implemented. Chapter 11 remains planned.
+Chapters 8–11 are implemented. Chapter 11 completes Part III; Part IV remains planned.
 
 [Back to the complete contents](../../CONTENTS.md)

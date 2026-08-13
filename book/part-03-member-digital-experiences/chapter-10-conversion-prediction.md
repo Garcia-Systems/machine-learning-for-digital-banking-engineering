@@ -494,6 +494,6 @@ SESSION SUMMARIES → behavioral features → CLUSTERING
 Possible fictional dimensions include session duration, account views, search
 frequency, transfer activity, statement activity, help usage, and mobile/web mix.
 Clusters are behavioral patterns—not member identities or value judgments.
-Chapter 11 remains unimplemented.
+Continue with [Chapter 11 — Member Segmentation](chapter-11-member-segmentation.md).
 
-[Previous: Chapter 9 — Predicting Digital Journey Abandonment](chapter-09-predicting-digital-journey-abandonment.md) · [Back to Part III](README.md) · [Back to complete contents](../../CONTENTS.md)
+[Previous: Chapter 9 — Predicting Digital Journey Abandonment](chapter-09-predicting-digital-journey-abandonment.md) · [Next: Chapter 11 — Member Segmentation](chapter-11-member-segmentation.md) · [Back to Part III](README.md) · [Back to complete contents](../../CONTENTS.md)

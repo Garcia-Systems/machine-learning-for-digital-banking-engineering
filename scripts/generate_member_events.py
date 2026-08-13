@@ -1,4 +1,4 @@
-"""Generate the deterministic, fictional Chapters 8 and 9 member-event fixture."""
+"""Generate the deterministic, fictional Chapters 8–11 member-event fixture."""
 
 import csv
 import random
@@ -142,6 +142,54 @@ def main() -> None:
                          "session_id": session_id, "event_name": name,
                          "channel": channel, "journey": journey(name),
                          "landing_source": source, "device_category": device})
+
+    # Chapter 11 adds session-pattern variation to the same event universe.
+    # ``kind`` is generation metadata only: it is deliberately not written to
+    # the fixture and can never become a clustering target.
+    segmentation_patterns = (
+        "quick_account_check", "transfer_focused", "statement_research", "help_search_heavy",
+    )
+    for offset in range(400):
+        session_id = f"session-{4000 + offset}"
+        channel = "mobile" if randomizer.random() < 0.51 else "web"
+        kind = segmentation_patterns[offset % len(segmentation_patterns)]
+        names = ["session_started", "login_completed", "dashboard_viewed"]
+        if kind == "quick_account_check":
+            names += ["account_viewed"] * randomizer.randint(2, 5)
+            if randomizer.random() < 0.18:
+                names.append("statement_viewed")
+        elif kind == "transfer_focused":
+            # Repeated transfer interactions provide a count signal without
+            # creating Chapter 9's recipient-selection prediction point.
+            names += ["account_viewed", "transfer_started", "transfer_reviewed"]
+            if randomizer.random() < 0.76:
+                names.append("transfer_completed")
+            if randomizer.random() < 0.20:
+                names.append("search_performed")
+        elif kind == "statement_research":
+            names += ["account_viewed"] * randomizer.randint(1, 3)
+            names += ["statement_viewed"] * randomizer.randint(2, 5)
+            if randomizer.random() < 0.25:
+                names.append("search_performed")
+        else:
+            names += ["search_performed"] * randomizer.randint(2, 5)
+            names += ["help_opened"] * randomizer.randint(1, 3)
+            if randomizer.random() < 0.35:
+                names.append("account_viewed")
+            randomizer.shuffle(names[3:])
+        if randomizer.random() < 0.09:
+            names.append("verification_started")
+            if randomizer.random() < 0.72:
+                names.append("verification_completed")
+        names.append("session_ended")
+        timestamp = start + timedelta(days=10, minutes=offset * 6)
+        for name in names:
+            maximum_delay = 50 if kind == "help_search_heavy" else 28
+            timestamp += timedelta(seconds=randomizer.randint(4, maximum_delay))
+            rows.append({"timestamp": timestamp.isoformat().replace("+00:00", "Z"),
+                         "session_id": session_id, "event_name": name,
+                         "channel": channel, "journey": journey(name),
+                         "landing_source": "", "device_category": ""})
     with OUTPUT.open("w", newline="", encoding="utf-8") as target:
         writer = csv.DictWriter(
             target,
@@ -151,7 +199,7 @@ def main() -> None:
         )
         writer.writeheader()
         writer.writerows(rows)
-    print(f"Wrote {len(rows)} events in 890 sessions to {OUTPUT}")
+    print(f"Wrote {len(rows)} events in 1290 sessions to {OUTPUT}")
 
 
 if __name__ == "__main__":
