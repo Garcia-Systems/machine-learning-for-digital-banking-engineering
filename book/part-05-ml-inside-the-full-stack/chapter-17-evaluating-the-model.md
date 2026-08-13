@@ -546,6 +546,6 @@ trusted model artifact
 prediction response
 ```
 
-Chapter 18 will introduce a small Python prediction service with a request schema, validation, health endpoint, startup model loading, prediction endpoint, stable JSON response contract, and tests. It remains unimplemented.
+Chapter 18 introduces a small Python prediction service with a request schema, validation, health endpoint, startup model loading, prediction endpoint, stable JSON response contract, and tests.
 
-[Previous: Chapter 16](chapter-16-training-a-model-in-python.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 16](chapter-16-training-a-model-in-python.md) · [Next: Chapter 18](chapter-18-serving-a-model-through-an-api.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
