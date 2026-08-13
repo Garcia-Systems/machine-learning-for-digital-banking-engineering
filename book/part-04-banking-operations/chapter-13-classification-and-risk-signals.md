@@ -452,7 +452,7 @@ regression model
 future requests_per_minute
 ```
 
-Chapter 14 remains planned and is not implemented here.
 
 [Previous: Chapter 12 — Transaction Anomaly Detection](chapter-12-transaction-anomaly-detection.md) ·
+[Next: Chapter 14 — Predicting System Demand](chapter-14-predicting-system-demand.md) ·
 [Back to Part IV](README.md) · [Complete contents](../../CONTENTS.md)
