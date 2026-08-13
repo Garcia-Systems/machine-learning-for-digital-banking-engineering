@@ -34,7 +34,7 @@
 17. [Evaluating the Model](book/part-05-ml-inside-the-full-stack/chapter-17-evaluating-the-model.md)
 18. [Serving a Model Through an API](book/part-05-ml-inside-the-full-stack/chapter-18-serving-a-model-through-an-api.md)
 19. [Integrating Machine Learning with PHP](book/part-05-ml-inside-the-full-stack/chapter-19-integrating-machine-learning-with-php.md)
-20. Building an ML-Assisted Monitoring Dashboard
+20. [Building an ML-Assisted Monitoring Dashboard](book/part-05-ml-inside-the-full-stack/chapter-20-building-an-ml-assisted-monitoring-dashboard.md)
 
 ## Part VI — Responsible Machine Learning in Financial Systems
 
