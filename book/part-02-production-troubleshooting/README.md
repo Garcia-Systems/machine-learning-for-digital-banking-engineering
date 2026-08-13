@@ -5,9 +5,9 @@ decision-making, and remediation in the hands of engineers.
 
 - [Chapter 4 — Detecting Abnormal Application Behavior](chapter-04-detecting-abnormal-application-behavior.md)
 - [Chapter 5 — Incident Classification](chapter-05-incident-classification.md)
-- Chapter 6 — Finding the Signals That Matter *(planned)*
+- [Chapter 6 — Finding the Signals That Matter](chapter-06-finding-the-signals-that-matter.md)
 - Chapter 7 — Predicting Integration Failures *(planned)*
 
-Chapters 4 and 5 are implemented. Chapters 6 and 7 remain roadmap items.
+Chapters 4–6 are implemented. Chapter 7 remains a roadmap item.
 
 [Back to the complete contents](../../CONTENTS.md)
