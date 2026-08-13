@@ -4,6 +4,7 @@
 > differ substantially from established operational patterns?
 
 [Previous: Chapter 11 — Member Segmentation](../part-03-member-digital-experiences/chapter-11-member-segmentation.md) ·
+[Next: Chapter 13 — Classification and Risk Signals](chapter-13-classification-and-risk-signals.md) ·
 [Back to Part IV](README.md) · [Complete contents](../../CONTENTS.md)
 
 Harbor Federal Credit Union processes many fictional transaction-like events through
@@ -378,8 +379,9 @@ transaction features ─► supervised classifier ─► review probability
                      ─► controlled operational review
 ```
 
-It will not be a credit-risk, loan-approval, or member-worth model. Chapter 13
-remains planned and is not implemented here.
+It is not a credit-risk, loan-approval, or member-worth model. Continue to the
+implemented supervised-routing chapter.
 
 [Previous: Chapter 11 — Member Segmentation](../part-03-member-digital-experiences/chapter-11-member-segmentation.md) ·
+[Next: Chapter 13 — Classification and Risk Signals](chapter-13-classification-and-risk-signals.md) ·
 [Back to Part IV](README.md) · [Complete contents](../../CONTENTS.md)

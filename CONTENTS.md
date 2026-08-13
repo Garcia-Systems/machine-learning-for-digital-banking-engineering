@@ -24,7 +24,7 @@
 ## Part IV — Machine Learning for Banking Operations
 
 12. [Transaction Anomaly Detection](book/part-04-banking-operations/chapter-12-transaction-anomaly-detection.md)
-13. Classification and Risk Signals
+13. [Classification and Risk Signals](book/part-04-banking-operations/chapter-13-classification-and-risk-signals.md)
 14. Predicting System Demand
 15. Database Performance Prediction
 
