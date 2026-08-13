@@ -44,3 +44,12 @@ with both application-start outcomes. Its overlapping, noisy relationships suppo
 conversion prediction but do not estimate real campaign, device, channel, or member
 behavior. Chapter 11 adds 400 varied session-pattern examples for unsupervised
 clustering; its generation tendencies are not stored as labels or model targets.
+
+Chapter 12 uses `harbor_transaction_observations.csv`, 800 deterministic fictional
+baseline observations generated with seed 1212. Its coarse amount bands, generic
+transaction types, operational channels, and contextual measurements contain no
+direct member identity or exact transaction amount. It has no anomaly target.
+`harbor_transaction_scenarios.csv` holds five manually designed evaluation probes
+kept out of training. These fixtures demonstrate mixed-feature preprocessing and
+relative unusualness; they are not realistic transaction distributions, fraud
+labels, evidence of wrongdoing, or estimates of any real rate.

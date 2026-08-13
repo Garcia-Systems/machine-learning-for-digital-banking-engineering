@@ -1,0 +1,6 @@
+scenario,timestamp,transaction_type,channel,amount_band,hour_of_day,recent_transaction_count,minutes_since_previous_transaction,device_change,distance_from_recent_pattern
+routine_mobile_purchase,2026-08-01T14:00:00Z,debit_purchase,mobile,25_to_99,14,2,82.0,false,0.12
+large_normal_transfer,2026-08-01T13:00:00Z,external_transfer,web,2500_plus,13,2,130.0,false,0.20
+unusual_combination,2026-08-02T03:00:00Z,external_transfer,web,2500_plus,3,8,4.0,true,0.94
+new_device_routine_behavior,2026-08-02T15:00:00Z,debit_purchase,mobile,25_to_99,15,2,76.0,true,0.25
+high_recent_activity,2026-08-02T17:00:00Z,debit_purchase,mobile,100_to_499,17,8,7.0,false,0.24

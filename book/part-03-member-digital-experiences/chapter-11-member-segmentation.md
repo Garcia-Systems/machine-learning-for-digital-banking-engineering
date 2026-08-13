@@ -523,8 +523,10 @@ Chapter 12 — **Transaction Anomaly Detection** will ask:
 Possible educational features include `amount_band`, `time_of_day`,
 `transaction_type`, `channel`, `recent_transaction_count`, and
 `distance_from_recent_pattern`. The focus will be anomaly-detection mechanics and
-safe escalation—not automatically accusing a member of fraud. Chapter 12 remains
-unimplemented.
+safe escalation—not automatically accusing a member of fraud. Continue to the
+implemented Chapter 12 laboratory.
 
 [Previous: Chapter 10 — Conversion Prediction](chapter-10-conversion-prediction.md) ·
-[Back to Part III](README.md) · [Complete contents](../../CONTENTS.md)
+[Back to Part III](README.md) ·
+[Next: Chapter 12 — Transaction Anomaly Detection](../part-04-banking-operations/chapter-12-transaction-anomaly-detection.md) ·
+[Complete contents](../../CONTENTS.md)
