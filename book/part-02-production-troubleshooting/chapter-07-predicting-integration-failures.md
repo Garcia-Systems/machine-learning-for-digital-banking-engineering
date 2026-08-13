@@ -550,7 +550,7 @@ Digital banking engineering also includes the member-facing product. Part III wi
 
 # Part III — Machine Learning for Member Digital Experiences
 
-Next: **Chapter 8 — Understanding Member Behavior** *(planned; not implemented here)*.
+Next: [**Chapter 8 — Understanding Member Behavior**](../part-03-member-digital-experiences/chapter-08-understanding-member-behavior.md).
 
 ```text
 PRODUCTION TELEMETRY
@@ -575,4 +575,4 @@ verification_abandoned
 search_performed
 ```
 
-[Back to the Part II overview](README.md) · [Back to complete contents](../../CONTENTS.md)
+[Continue to Chapter 8](../part-03-member-digital-experiences/chapter-08-understanding-member-behavior.md) · [Back to the Part II overview](README.md) · [Back to complete contents](../../CONTENTS.md)
