@@ -339,6 +339,6 @@ recent predictions
 ENGINEERING DASHBOARD
 ```
 
-Chapter 20 will combine deterministic metrics, predictions, anomaly signals, model version, clear uncertainty language, and no automatic root-cause claims. It remains unimplemented.
+Chapter 20 combines deterministic metrics, predictions, anomaly signals, model version, clear uncertainty language, and no automatic root-cause claims.
 
-[Previous: Chapter 18](chapter-18-serving-a-model-through-an-api.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 18](chapter-18-serving-a-model-through-an-api.md) · [Next: Chapter 20](chapter-20-building-an-ml-assisted-monitoring-dashboard.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)

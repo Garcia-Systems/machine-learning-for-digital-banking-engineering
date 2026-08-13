@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbor ML-Assisted Monitoring Dashboard</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; }
+    body { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #17212b; background: #f5f7f8; }
+    header, section { background: white; border: 1px solid #ccd4da; border-radius: .35rem; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .status { font-weight: 700; text-transform: uppercase; }
+    dl { display: grid; grid-template-columns: minmax(12rem, 1fr) 2fr; gap: .45rem 1rem; }
+    dt { font-weight: 650; } dd { margin: 0; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #d9e0e4; padding: .5rem; text-align: left; }
+    caption { font-weight: 700; text-align: left; margin-bottom: .5rem; }
+    .notice { border-left: .3rem solid #506d85; padding-left: .75rem; }
+    .warning { font-weight: 650; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Harbor Federal Credit Union</h1>
+  <p>ML-Assisted Monitoring Dashboard — internal engineering teaching tool</p>
+  <p>Generated timestamp: <time datetime="{{ snapshot.generated_at.isoformat() }}">{{ snapshot.generated_at.isoformat() }}</time></p>
+  <p>Deterministic severity: <span class="status">{{ snapshot.severity }}</span></p>
+</header>
+
+<main>
+<section aria-labelledby="health-heading">
+  <h2 id="health-heading">Observed — system health</h2>
+  <p>These values are direct telemetry observations, not model conclusions.</p>
+  <dl>
+    <dt>API latency</dt><dd>{{ '%.0f'|format(snapshot.telemetry.api_latency_ms) }} ms</dd>
+    <dt>Error rate</dt><dd>{{ '%.1f'|format(snapshot.telemetry.error_rate * 100) }}%</dd>
+    <dt>DB connections</dt><dd>{{ snapshot.telemetry.db_connections }}</dd>
+    <dt>Queue depth</dt><dd>{{ snapshot.telemetry.queue_depth }}</dd>
+    <dt>Vendor latency</dt><dd>{{ '%.0f'|format(snapshot.telemetry.vendor_latency_ms) }} ms</dd>
+    <dt>Requests/minute</dt><dd>{{ '%.0f'|format(snapshot.telemetry.requests_per_minute) }}</dd>
+    <dt>Telemetry timestamp</dt><dd>{{ snapshot.telemetry.timestamp.isoformat() }}</dd>
+  </dl>
+</section>
+
+<section aria-labelledby="ml-heading">
+  <h2 id="ml-heading">Model suggests — ML signals</h2>
+  <p>Prediction status: <span class="status">{{ snapshot.ml_status.value }}</span></p>
+  {% if snapshot.ml_status.value == 'UNAVAILABLE' %}
+    <p class="warning">ML prediction unavailable. Deterministic telemetry remains available; missing values are not zero risk.</p>
+  {% else %}
+    {% if snapshot.ml_status.value == 'STALE' %}<p class="warning">This prediction is stale and must not be treated as current evidence.</p>{% endif %}
+    <dl>
+      <dt>Prediction timestamp</dt><dd>{{ snapshot.prediction_timestamp.isoformat() }}</dd>
+      <dt>Prediction age</dt><dd>{{ '%.0f'|format(snapshot.prediction_age_seconds) }} seconds</dd>
+      <dt>Anomaly status</dt><dd>{{ 'YES' if snapshot.telemetry_anomaly else 'NO' }}</dd>
+      <dt>Anomaly score</dt><dd>{{ '%.4f'|format(snapshot.anomaly_score) }} (unusualness score; not a probability)</dd>
+      <dt>Predicted incident pattern</dt><dd>{{ snapshot.predicted_incident_class }}</dd>
+    </dl>
+    <p>Indicates how unusual the current telemetry appears relative to the learned baseline.</p>
+    {% if snapshot.classification_ambiguous %}<p class="notice">Pattern classification is ambiguous.</p>{% endif %}
+    <table>
+      <caption>Model-assigned incident-class probabilities (not confirmed causes)</caption>
+      <thead><tr><th scope="col">Historical pattern</th><th scope="col">Probability</th></tr></thead>
+      <tbody>{% for label, probability in snapshot.ordered_incident_probabilities %}
+        <tr><td>{{ label }}</td><td>{{ '%.3f'|format(probability) }}</td></tr>
+      {% endfor %}</tbody>
+    </table>
+    <h3>Integration failure signal</h3>
+    <dl>
+      <dt>Failure probability</dt><dd>{{ '%.3f'|format(snapshot.integration_failure_probability) }} — model-assigned risk</dd>
+      <dt>Threshold</dt><dd>{{ '%.2f'|format(snapshot.integration_failure_threshold) }}</dd>
+      <dt>Predicted class</dt><dd>{{ 'elevated failure risk' if snapshot.integration_failure_prediction else 'below elevated-risk threshold' }}</dd>
+      <dt>Model</dt><dd>{{ snapshot.model_name }}</dd>
+      <dt>Model version</dt><dd>{{ snapshot.model_version }}</dd>
+    </dl>
+  {% endif %}
+</section>
+
+<section aria-labelledby="investigate-heading">
+  <h2 id="investigate-heading">Investigate — deterministic guidance</h2>
+  {% if snapshot.investigation_guidance %}
+    <p>The selected historical pattern maps to these application-defined investigation directions:</p>
+    <ul>{% for item in snapshot.investigation_guidance %}<li>{{ item }}</li>{% endfor %}</ul>
+  {% else %}
+    <p>Begin with direct telemetry, traces, and logs. No current model guidance is available.</p>
+  {% endif %}
+  <p class="notice">Model output supports a hypothesis. It is not a confirmed diagnosis; engineers validate causes with evidence.</p>
+</section>
+
+<section aria-labelledby="history-heading">
+  <h2 id="history-heading">Recent prediction history</h2>
+  <table>
+    <caption>Recent deterministic observations and separately labeled model signals</caption>
+    <thead><tr><th scope="col">Time</th><th scope="col">API ms</th><th scope="col">Errors</th><th scope="col">Queue</th><th scope="col">Anomaly</th><th scope="col">Incident pattern</th><th scope="col">Failure probability</th><th scope="col">Status</th><th scope="col">Model version</th></tr></thead>
+    <tbody>{% for item in history %}<tr>
+      <td>{{ item.telemetry.timestamp.strftime('%H:%M') }}</td>
+      <td>{{ '%.0f'|format(item.telemetry.api_latency_ms) }}</td>
+      <td>{{ '%.1f'|format(item.telemetry.error_rate * 100) }}%</td>
+      <td>{{ item.telemetry.queue_depth }}</td>
+      <td>{{ 'yes' if item.telemetry_anomaly else ('no' if item.telemetry_anomaly is not none else 'unavailable') }}</td>
+      <td>{{ item.predicted_incident_class or 'unavailable' }}</td>
+      <td>{{ '%.3f'|format(item.integration_failure_probability) if item.integration_failure_probability is not none else 'unavailable' }}</td>
+      <td>{{ item.ml_status.value }}</td><td>{{ item.model_version or 'unavailable' }}</td>
+    </tr>{% endfor %}</tbody>
+  </table>
+</section>
+</main>
+</body>
+</html>
