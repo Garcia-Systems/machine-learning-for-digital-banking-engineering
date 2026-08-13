@@ -175,7 +175,9 @@ def split_integration_dataset(
     return IntegrationDatasetSplit(X_train, X_test, y_train, y_test)
 
 
-def build_integration_pipeline() -> Pipeline:
+def build_integration_pipeline(
+    *, random_state: int = INTEGRATION_RANDOM_STATE, max_iter: int = 1_000
+) -> Pipeline:
     """Build named numeric/categorical preprocessing and binary classification."""
     numeric_indices = tuple(range(len(NUMERIC_FEATURES)))
     categorical_indices = tuple(range(len(NUMERIC_FEATURES), len(PREDICTION_FEATURES)))
@@ -194,7 +196,7 @@ def build_integration_pipeline() -> Pipeline:
             ("preprocessor", preprocessor),
             (
                 "classifier",
-                LogisticRegression(random_state=INTEGRATION_RANDOM_STATE, max_iter=1_000),
+                LogisticRegression(random_state=random_state, max_iter=max_iter),
             ),
         ]
     )

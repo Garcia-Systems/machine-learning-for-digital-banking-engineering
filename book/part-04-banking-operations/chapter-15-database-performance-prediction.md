@@ -361,6 +361,6 @@ Chapter 16, **Training a Model in Python**, will consolidate earlier educational
 data → validation → feature pipeline → training → evaluation → versioned model artifact
 ```
 
-It will introduce controlled model artifacts and repeatable training jobs. Chapter 16 remains planned; it is not implemented here.
+It introduces controlled model artifacts and repeatable training jobs.
 
-[Previous: Chapter 14 — Predicting System Demand](chapter-14-predicting-system-demand.md) · [Back to Part IV](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 14 — Predicting System Demand](chapter-14-predicting-system-demand.md) · [Back to Part IV](README.md) · [Next: Chapter 16 — Training a Model in Python](../part-05-ml-inside-the-full-stack/chapter-16-training-a-model-in-python.md) · [Complete contents](../../CONTENTS.md)
