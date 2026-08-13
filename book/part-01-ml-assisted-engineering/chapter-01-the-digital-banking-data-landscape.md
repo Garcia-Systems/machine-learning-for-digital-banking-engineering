@@ -1,6 +1,6 @@
 # Chapter 1 — The Digital Banking Data Landscape
 
-[← Part I contents](README.md) · [Book contents](../../CONTENTS.md)
+[← Part I contents](README.md) · [Book contents](../../CONTENTS.md) · [Chapter 2 →](chapter-02-from-engineering-problem-to-ml-problem.md)
 
 > **Central question:** Before a machine-learning system can recognize patterns in a digital banking system, what can the system actually observe?
 
