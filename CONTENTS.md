@@ -39,7 +39,7 @@
 ## Part VI — Responsible Machine Learning in Financial Systems
 
 21. [Security and Sensitive Financial Data](book/part-06-responsible-ml/chapter-21-security-and-sensitive-financial-data.md)
-22. Explainability
+22. [Explainability](book/part-06-responsible-ml/chapter-22-explainability.md)
 23. Bias and Fairness
 24. Human-in-the-Loop Systems
 25. Monitoring Models in Production
