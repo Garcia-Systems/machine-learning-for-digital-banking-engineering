@@ -33,7 +33,7 @@
 16. [Training a Model in Python](book/part-05-ml-inside-the-full-stack/chapter-16-training-a-model-in-python.md)
 17. [Evaluating the Model](book/part-05-ml-inside-the-full-stack/chapter-17-evaluating-the-model.md)
 18. [Serving a Model Through an API](book/part-05-ml-inside-the-full-stack/chapter-18-serving-a-model-through-an-api.md)
-19. Integrating Machine Learning with PHP
+19. [Integrating Machine Learning with PHP](book/part-05-ml-inside-the-full-stack/chapter-19-integrating-machine-learning-with-php.md)
 20. Building an ML-Assisted Monitoring Dashboard
 
 ## Part VI — Responsible Machine Learning in Financial Systems

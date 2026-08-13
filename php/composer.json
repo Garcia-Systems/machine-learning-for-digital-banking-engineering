@@ -1,0 +1,20 @@
+{
+    "name": "harbor-federal/chapter-19-ml-client",
+    "description": "Harbor Federal Credit Union's educational PHP adapter for the Chapter 18 ML API",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.9",
+        "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {"psr-4": {"Harbor\\": "src/"}},
+    "autoload-dev": {"psr-4": {"Harbor\\Tests\\": "tests/"}},
+    "scripts": {
+        "test": "phpunit",
+        "lint": "@php -r '$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(\"src\")); foreach ($files as $file) { if ($file->getExtension() === \"php\") { passthru(\"php -l \" . escapeshellarg($file->getPathname()), $status); if ($status !== 0) exit($status); }}'"
+    }
+}

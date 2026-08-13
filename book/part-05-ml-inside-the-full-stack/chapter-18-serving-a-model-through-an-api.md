@@ -395,6 +395,6 @@ HTTP client → Python prediction API → prediction DTO
 application observability logic
 ```
 
-Chapter 19 will cover an ML API client abstraction, request and response DTOs, timeouts, failure handling, retry and fallback thinking, dependency injection, and automated integration tests—while never making the ML service authoritative for core financial behavior. Chapter 19 remains unimplemented.
+Chapter 19 covers an ML API client abstraction, request and response DTOs, timeouts, failure handling, retry and fallback thinking, dependency injection, and automated tests—while never making the ML service authoritative for core financial behavior.
 
-[Previous: Chapter 17](chapter-17-evaluating-the-model.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 17](chapter-17-evaluating-the-model.md) · [Next: Chapter 19](chapter-19-integrating-machine-learning-with-php.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
