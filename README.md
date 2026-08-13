@@ -25,7 +25,7 @@ The book begins with a transparent threshold-based detector, then moves toward t
 
 Examples target Python 3.11+ and favor small, typed, deterministic components. Chapter 0 uses only the Python standard library; tests use `pytest`.
 
-Install the dependencies, then run the implemented Chapters 0–16 examples and tests from the repository root:
+Install the dependencies, then run the implemented Chapters 0–17 examples and tests from the repository root:
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -46,16 +46,17 @@ python examples/chapter_13_classification_and_risk_signals.py
 python examples/chapter_14_predicting_system_demand.py
 python examples/chapter_15_database_performance.py
 python examples/chapter_16_training_workflow.py
+python examples/chapter_17_model_evaluation.py
 python scripts/train_integration_failure_model.py
 pytest
 ```
 
-Chapters 0–2 deliberately use traditional programming and descriptive statistics. Chapter 3 introduces scikit-learn narrowly to train the book's first small model; Chapters 4–7 apply ML to production troubleshooting. Chapters 8–11 cover privacy-minimized digital experience analysis. Chapter 12 starts Part IV with mixed-feature, unsupervised transaction anomaly detection and explicitly separates unusualness from wrongdoing. Chapter 13 adds supervised historical review routing, threshold analysis, and careful label semantics. Chapter 14 introduces leakage-safe, time-aware regression for near-future system demand and capacity context. Chapter 15 completes Part IV with pre-execution database-duration regression as an observability aid. Chapter 16 starts Part V with a validated training command, trusted full-pipeline artifact, SHA-256 dataset fingerprint, and generated metadata under gitignored `artifacts/integration-failure/`. All fixtures and results are fictional educational material, not production banking evidence.
+Chapters 0–2 deliberately use traditional programming and descriptive statistics. Chapter 3 introduces scikit-learn narrowly to train the book's first small model; Chapters 4–7 apply ML to production troubleshooting. Chapters 8–11 cover privacy-minimized digital experience analysis. Chapter 12 starts Part IV with mixed-feature, unsupervised transaction anomaly detection and explicitly separates unusualness from wrongdoing. Chapter 13 adds supervised historical review routing, threshold analysis, and careful label semantics. Chapter 14 introduces leakage-safe, time-aware regression for near-future system demand and capacity context. Chapter 15 completes Part IV with pre-execution database-duration regression as an observability aid. Chapter 16 starts Part V with a validated training command, trusted full-pipeline artifact, SHA-256 dataset fingerprint, and generated metadata under gitignored `artifacts/integration-failure/`. Chapter 17 evaluates its held-out probabilities against the actual target distribution and baseline, then examines thresholds, ranking, confident errors, technical slices, and calibration bins. All fixtures and results are fictional educational material, not production banking evidence.
 
 ## Repository map
 
 - [`CONTENTS.md`](CONTENTS.md) — complete roadmap for the book.
-- [`book/`](book/) — chapter narrative; Parts I–IV and Chapter 16 are implemented.
+- [`book/`](book/) — chapter narrative; Parts I–IV and Chapters 16–17 are implemented.
 - [`src/harbor_ml/`](src/harbor_ml/) — reusable, typed Python components.
 - [`examples/`](examples/) — command-line examples.
 - [`tests/`](tests/) — automated checks for executable material.
