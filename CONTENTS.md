@@ -25,7 +25,7 @@
 
 12. [Transaction Anomaly Detection](book/part-04-banking-operations/chapter-12-transaction-anomaly-detection.md)
 13. [Classification and Risk Signals](book/part-04-banking-operations/chapter-13-classification-and-risk-signals.md)
-14. Predicting System Demand
+14. [Predicting System Demand](book/part-04-banking-operations/chapter-14-predicting-system-demand.md)
 15. Database Performance Prediction
 
 ## Part V — Putting Machine Learning Inside the Full Stack
