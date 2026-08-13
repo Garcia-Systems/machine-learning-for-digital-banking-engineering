@@ -132,3 +132,33 @@ __all__ += [
     "split_incident_dataset",
     "train_incident_classifier",
 ]
+
+from .feature_analysis import (  # noqa: E402
+    ANALYSIS_FEATURES,
+    SYNTHETIC_NOISE,
+    SYNTHETIC_NOISE_SEED,
+    AblationResult,
+    FeatureSummary,
+    ModelCoefficient,
+    add_synthetic_noise,
+    calculate_correlations,
+    compare_feature_sets,
+    extract_model_coefficients,
+    run_ablation,
+    summarize_features_by_class,
+)
+
+__all__ += [
+    "ANALYSIS_FEATURES",
+    "SYNTHETIC_NOISE",
+    "SYNTHETIC_NOISE_SEED",
+    "AblationResult",
+    "FeatureSummary",
+    "ModelCoefficient",
+    "add_synthetic_noise",
+    "calculate_correlations",
+    "compare_feature_sets",
+    "extract_model_coefficients",
+    "run_ablation",
+    "summarize_features_by_class",
+]

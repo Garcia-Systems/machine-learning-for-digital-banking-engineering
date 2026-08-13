@@ -695,4 +695,4 @@ EVALUATION
 Which signals matter?
 ```
 
-Chapter 6 will be a practical discussion of feature usefulness, redundant signals, noisy variables, correlations, coefficients or importance, ablation, and engineering interpretation. It remains planned and is not implemented here.
+Continue to [Chapter 6 — Finding the Signals That Matter](chapter-06-finding-the-signals-that-matter.md) for a practical investigation of distributions, correlation, standardized coefficients, noise, and feature ablation.
