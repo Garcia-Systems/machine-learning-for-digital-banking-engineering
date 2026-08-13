@@ -2,7 +2,7 @@
 
 > Part II — Machine Learning for Production Troubleshooting
 
-[Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 5](chapter-05-incident-classification.md)
+[Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 5](chapter-05-incident-classification.md) · [Next: Chapter 7](chapter-07-predicting-integration-failures.md)
 
 ## Central question
 
@@ -523,4 +523,4 @@ and the target:
 request_failed
 ```
 
-Chapter 7 remains unimplemented; this chapter only establishes the transition.
+[Continue to Chapter 7 — Predicting Integration Failures](chapter-07-predicting-integration-failures.md)

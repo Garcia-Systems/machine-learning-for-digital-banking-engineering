@@ -119,7 +119,7 @@ def test_predicts_one_valid_new_observation(fitted_model) -> None:
 
 
 @pytest.mark.parametrize(
-    "request, message",
+    "candidate, message",
     [
         (
             {"vendor_latency_ms": 100, "queue_depth": 10, "db_connections": 20},
@@ -132,8 +132,8 @@ def test_predicts_one_valid_new_observation(fitted_model) -> None:
     ],
 )
 def test_rejects_malformed_new_observations(
-    fitted_model, request, message: str
+    fitted_model, candidate, message: str
 ) -> None:
     model, _ = fitted_model
     with pytest.raises(ValueError, match=message):
-        predict_request_failure(model, request)
+        predict_request_failure(model, candidate)
