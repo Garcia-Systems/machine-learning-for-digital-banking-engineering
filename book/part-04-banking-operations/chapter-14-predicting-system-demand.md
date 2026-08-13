@@ -296,7 +296,7 @@ Chapter 14 asks, **How much traffic is coming?** Chapter 15 will ask, **Given re
 query characteristics
  database load
  connection pressure
- rows examined
+ estimated row band
  recent latency
         │
         ▼
@@ -306,6 +306,6 @@ query characteristics
 predicted query latency (future_query_duration_ms)
 ```
 
-Chapter 15 remains planned and is not implemented here.
+Chapter 15 is now implemented as the final chapter of Part IV.
 
 [Previous: Chapter 13 — Classification and Risk Signals](chapter-13-classification-and-risk-signals.md) · [Back to Part IV](README.md) · [Complete contents](../../CONTENTS.md)
