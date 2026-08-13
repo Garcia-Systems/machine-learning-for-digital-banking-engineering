@@ -30,7 +30,7 @@
 
 ## Part V — Putting Machine Learning Inside the Full Stack
 
-16. Training a Model in Python
+16. [Training a Model in Python](book/part-05-ml-inside-the-full-stack/chapter-16-training-a-model-in-python.md)
 17. Evaluating the Model
 18. Serving a Model Through an API
 19. Integrating Machine Learning with PHP

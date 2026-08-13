@@ -247,6 +247,36 @@ __all__ += [
     "train_integration_model",
 ]
 
+from .training import (  # noqa: E402
+    MODEL_NAME,
+    EvaluationMetrics,
+    TrainingConfig,
+    TrainingMetadata,
+    TrainingResult,
+    calculate_file_sha256,
+    evaluate_trained_model,
+    load_trusted_model_artifact,
+    save_model_artifact,
+    save_training_metadata,
+    train_integration_failure_model,
+    validate_training_dataset,
+)
+
+__all__ += [
+    "MODEL_NAME",
+    "EvaluationMetrics",
+    "TrainingConfig",
+    "TrainingMetadata",
+    "TrainingResult",
+    "calculate_file_sha256",
+    "evaluate_trained_model",
+    "load_trusted_model_artifact",
+    "save_model_artifact",
+    "save_training_metadata",
+    "train_integration_failure_model",
+    "validate_training_dataset",
+]
+
 from .member_behavior import (  # noqa: E402
     EVENT_COLUMNS,
     EVENT_VOCABULARY,
