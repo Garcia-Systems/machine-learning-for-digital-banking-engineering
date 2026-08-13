@@ -8,6 +8,6 @@ Part V moves Harbor Federal Credit Union's fictional models from educational exp
 - [Chapter 19 — Integrating Machine Learning with PHP](chapter-19-integrating-machine-learning-with-php.md)
 - [Chapter 20 — Building an ML-Assisted Monitoring Dashboard](chapter-20-building-an-ml-assisted-monitoring-dashboard.md)
 
-Chapters 16–20 are implemented, completing Part V. Part VI remains planned.
+Chapters 16–20 are implemented, completing Part V. [Part VI begins with Chapter 21](../part-06-responsible-ml/README.md).
 
 [Back to the complete contents](../../CONTENTS.md)

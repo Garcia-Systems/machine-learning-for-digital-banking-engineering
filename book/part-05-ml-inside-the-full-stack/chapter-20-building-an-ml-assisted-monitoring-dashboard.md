@@ -533,6 +533,6 @@ TRAINING / INFERENCE
 LOGGING / STORAGE
 ```
 
-Chapter 21 will protect sensitive data throughout the ML lifecycle while keeping Harbor's examples fictional and privacy-minimized. It remains unimplemented.
+Chapter 21 protects sensitive data throughout the ML lifecycle while keeping Harbor's examples fictional and privacy-minimized.
 
-[Previous: Chapter 19](chapter-19-integrating-machine-learning-with-php.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 19](chapter-19-integrating-machine-learning-with-php.md) · [Next: Chapter 21](../part-06-responsible-ml/chapter-21-security-and-sensitive-financial-data.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)

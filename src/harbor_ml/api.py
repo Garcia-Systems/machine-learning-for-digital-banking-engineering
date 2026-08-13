@@ -14,6 +14,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints
 from sklearn.pipeline import Pipeline
 
+from .data_security import build_safe_log_context
 from .integration_failure_model import (
     CATEGORICAL_FEATURES,
     NUMERIC_FEATURES,
@@ -156,9 +157,8 @@ def create_app(
             )
             raise HTTPException(status_code=500, detail="prediction could not be calculated")
         LOGGER.info(
-            "prediction_succeeded endpoint=%s model_version=%s latency_ms=%.3f",
-            "/api/v1/predict/integration-failure",
-            runtime.model_version,
+            "prediction_succeeded context=%s latency_ms=%.3f",
+            build_safe_log_context(request.model_dump(), model_version=runtime.model_version),
             (perf_counter() - started) * 1_000,
         )
         return response
