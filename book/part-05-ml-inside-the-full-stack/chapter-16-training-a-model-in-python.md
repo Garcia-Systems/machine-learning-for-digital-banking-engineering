@@ -270,6 +270,6 @@ MODEL → held-out predictions → accuracy / precision / recall / F1
 GOOD METRIC ≠ SAFE OR USEFUL SYSTEM
 ```
 
-Chapter 17 remains planned and is not implemented here.
+Continue with [Chapter 17 — Evaluating the Model](chapter-17-evaluating-the-model.md) to turn held-out probabilities into an engineering evaluation.
 
-[Previous: Chapter 15](../part-04-banking-operations/chapter-15-database-performance-prediction.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 15](../part-04-banking-operations/chapter-15-database-performance-prediction.md) · [Next: Chapter 17](chapter-17-evaluating-the-model.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)
