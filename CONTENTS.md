@@ -41,7 +41,7 @@
 21. [Security and Sensitive Financial Data](book/part-06-responsible-ml/chapter-21-security-and-sensitive-financial-data.md)
 22. [Explainability](book/part-06-responsible-ml/chapter-22-explainability.md)
 23. Bias and Fairness
-24. Human-in-the-Loop Systems
+24. [Human-in-the-Loop Systems](book/part-06-responsible-ml/chapter-24-human-in-the-loop-systems.md)
 25. Monitoring Models in Production
 
 ## Part VII — Capstone: The Intelligent Digital Credit Union
