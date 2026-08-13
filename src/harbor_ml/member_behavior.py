@@ -15,7 +15,7 @@ EVENT_VOCABULARY = frozenset(
         "session_started", "login_completed", "login_failed", "dashboard_viewed",
         "account_viewed", "search_performed", "transfer_started",
         "recipient_selected", "transfer_reviewed", "transfer_completed",
-        "transfer_failed", "verification_started", "verification_completed",
+        "transfer_failed", "help_opened", "verification_started", "verification_completed",
         "verification_abandoned", "statement_viewed", "session_ended",
     }
 )
