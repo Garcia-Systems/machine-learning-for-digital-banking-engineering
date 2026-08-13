@@ -725,6 +725,6 @@ CAUSAL EXPLANATION
 what actually caused the real-world outcome
 ```
 
-Possible tools include logistic-regression coefficients, transformed per-request features, simple local linear contributions, and—where appropriate—permutation importance. Chapter 22 remains planned and is not implemented here.
+Possible tools include logistic-regression coefficients, transformed per-request features, simple local linear contributions, and—where appropriate—permutation importance. Chapter 22 implements these transparent techniques while keeping them separate from causal claims.
 
-[Previous: Chapter 20](../part-05-ml-inside-the-full-stack/chapter-20-building-an-ml-assisted-monitoring-dashboard.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 20](../part-05-ml-inside-the-full-stack/chapter-20-building-an-ml-assisted-monitoring-dashboard.md) · [Next: Chapter 22](chapter-22-explainability.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)

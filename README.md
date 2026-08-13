@@ -25,7 +25,7 @@ The book begins with a transparent threshold-based detector, then moves toward t
 
 Examples target Python 3.11+ and favor small, typed, deterministic components. Chapter 0 uses only the Python standard library; tests use `pytest`.
 
-Install the dependencies, then run the implemented Chapters 0–21 examples and tests from the repository root:
+Install the dependencies, then run the implemented Chapters 0–22 examples and tests from the repository root:
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -50,6 +50,7 @@ python examples/chapter_17_model_evaluation.py
 python examples/chapter_18_model_api.py
 python examples/chapter_20_monitoring_dashboard.py
 python examples/chapter_21_data_security.py
+python examples/chapter_22_explainability.py
 python scripts/train_integration_failure_model.py
 python scripts/audit_ml_data.py
 pytest
@@ -65,12 +66,12 @@ composer lint
 php examples/chapter_19_ml_client.php
 ```
 
-Chapters 0–2 deliberately use traditional programming and descriptive statistics. Chapter 3 introduces scikit-learn narrowly to train the book's first small model; Chapters 4–7 apply ML to production troubleshooting. Chapters 8–11 cover privacy-minimized digital experience analysis. Chapter 12 starts Part IV with mixed-feature, unsupervised transaction anomaly detection and explicitly separates unusualness from wrongdoing. Chapter 13 adds supervised historical review routing, threshold analysis, and careful label semantics. Chapter 14 introduces leakage-safe, time-aware regression for near-future system demand and capacity context. Chapter 15 completes Part IV with pre-execution database-duration regression as an observability aid. Chapter 16 starts Part V with a validated training command, trusted full-pipeline artifact, SHA-256 dataset fingerprint, and generated metadata under gitignored `artifacts/integration-failure/`. Chapter 17 evaluates its held-out probabilities against the actual target distribution and baseline, then examines thresholds, ranking, confident errors, technical slices, and calibration bins. Chapter 18 serves the trusted artifact through a typed, versioned FastAPI boundary with health, validation, controlled errors, and in-process tests. Chapter 19 consumes that API through a typed PHP/Guzzle adapter, explicit unavailability, dependency injection, and advisory-only observability. Chapter 20 completes Part V with a small FastAPI/Jinja2 engineering dashboard that separates direct telemetry, model suggestions, and deterministic investigation guidance while preserving unavailable and stale states. Chapter 21 begins Part VI with allowlist-first ML contracts, strict schema drift checks, safe logging context, artifact hashing, and a limited committed-dataset header audit. Chapters 22–25 remain planned. All fixtures and results are fictional educational material, not production banking evidence.
+Chapters 0–2 deliberately use traditional programming and descriptive statistics. Chapter 3 introduces scikit-learn narrowly to train the book's first small model; Chapters 4–7 apply ML to production troubleshooting. Chapters 8–11 cover privacy-minimized digital experience analysis. Chapter 12 starts Part IV with mixed-feature, unsupervised transaction anomaly detection and explicitly separates unusualness from wrongdoing. Chapter 13 adds supervised historical review routing, threshold analysis, and careful label semantics. Chapter 14 introduces leakage-safe, time-aware regression for near-future system demand and capacity context. Chapter 15 completes Part IV with pre-execution database-duration regression as an observability aid. Chapter 16 starts Part V with a validated training command, trusted full-pipeline artifact, SHA-256 dataset fingerprint, and generated metadata under gitignored `artifacts/integration-failure/`. Chapter 17 evaluates its held-out probabilities against the actual target distribution and baseline, then examines thresholds, ranking, confident errors, technical slices, and calibration bins. Chapter 18 serves the trusted artifact through a typed, versioned FastAPI boundary with health, validation, controlled errors, and in-process tests. Chapter 19 consumes that API through a typed PHP/Guzzle adapter, explicit unavailability, dependency injection, and advisory-only observability. Chapter 20 completes Part V with a small FastAPI/Jinja2 engineering dashboard that separates direct telemetry, model suggestions, and deterministic investigation guidance while preserving unavailable and stale states. Chapter 21 begins Part VI with allowlist-first ML contracts, strict schema drift checks, safe logging context, artifact hashing, and a limited committed-dataset header audit. Chapter 22 adds exact, model-versioned logistic-regression contributions, fitted feature-name mapping, held-out permutation importance, and explicitly non-causal sensitivity experiments. Chapters 23–25 remain planned. All fixtures and results are fictional educational material, not production banking evidence.
 
 ## Repository map
 
 - [`CONTENTS.md`](CONTENTS.md) — complete roadmap for the book.
-- [`book/`](book/) — chapter narrative; Parts I–V and Chapter 21 in Part VI are implemented.
+- [`book/`](book/) — chapter narrative; Parts I–V and Chapters 21–22 in Part VI are implemented.
 - [`php/`](php/) — Chapter 19 PHP adapter, laboratory, and PHPUnit tests.
 - [`src/harbor_ml/`](src/harbor_ml/) — reusable, typed Python components.
 - [`examples/`](examples/) — command-line examples.
