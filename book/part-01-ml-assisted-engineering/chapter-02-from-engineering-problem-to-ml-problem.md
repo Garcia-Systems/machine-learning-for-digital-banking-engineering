@@ -1,6 +1,6 @@
 # Chapter 2 — From Engineering Problem to ML Problem
 
-[← Chapter 1](chapter-01-the-digital-banking-data-landscape.md) · [Part I contents](README.md) · [Book contents](../../CONTENTS.md)
+[← Chapter 1](chapter-01-the-digital-banking-data-landscape.md) · [Part I contents](README.md) · [Book contents](../../CONTENTS.md) · [Chapter 3 →](chapter-03-the-machine-learning-pipeline.md)
 
 > **Central question:** How do we turn a real engineering problem into a machine-learning problem that can actually be measured, trained, and evaluated?
 
@@ -644,4 +644,4 @@ SPLIT
       EVALUATION
 ```
 
-Chapter 3 will introduce that complete conceptual pipeline. It is not implemented here, and Chapter 2 trains no model.
+Continue to Chapter 3 for that complete, executable pipeline. Chapter 2 itself trains no model.
