@@ -17,3 +17,8 @@ training. The scenarios cover normal behavior, vendor slowdown, queue pressure,
 broad pressure, and a subtle multivariate combination. The fixtures are stable for
 the executable laboratory; they are not estimates of real production distributions
 or Harbor's true incident rate.
+
+Chapter 5 uses `harbor_incident_classes.csv`, a deterministic, balanced fixture of
+300 labeled observations (60 per teaching class). Its overlapping synthetic
+patterns support a multi-class classification exercise. The balance and values do
+not estimate real incident frequency or describe a real production taxonomy.
