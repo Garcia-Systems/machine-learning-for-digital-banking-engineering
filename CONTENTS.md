@@ -4,7 +4,7 @@
 
 0. [The ML-Assisted Full-Stack Developer](book/part-01-ml-assisted-engineering/chapter-00-the-ml-assisted-full-stack-developer.md)
 1. [The Digital Banking Data Landscape](book/part-01-ml-assisted-engineering/chapter-01-the-digital-banking-data-landscape.md)
-2. From Engineering Problem to ML Problem
+2. [From Engineering Problem to ML Problem](book/part-01-ml-assisted-engineering/chapter-02-from-engineering-problem-to-ml-problem.md)
 3. The Machine Learning Pipeline
 
 ## Part II — Machine Learning for Production Troubleshooting
@@ -54,4 +54,3 @@
 31. Integrating the Banking Application
 32. Building the Engineering Dashboard
 33. Operating the Intelligent Digital Credit Union
-
