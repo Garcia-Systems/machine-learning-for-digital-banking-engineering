@@ -42,7 +42,7 @@
 22. [Explainability](book/part-06-responsible-ml/chapter-22-explainability.md)
 23. Bias and Fairness
 24. [Human-in-the-Loop Systems](book/part-06-responsible-ml/chapter-24-human-in-the-loop-systems.md)
-25. Monitoring Models in Production
+25. [Monitoring Models in Production](book/part-06-responsible-ml/chapter-25-monitoring-models-in-production.md)
 
 ## Part VII — Capstone: The Intelligent Digital Credit Union
 

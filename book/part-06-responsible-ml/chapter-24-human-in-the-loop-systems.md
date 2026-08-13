@@ -566,6 +566,6 @@ drift
 eventual outcomes
 ```
 
-Chapter 25 remains planned.
+Continue to Chapter 25 for the executable production-monitoring workflow.
 
-[Previous: Chapter 23 — Bias and Fairness (planned)](README.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 23 — Bias and Fairness (planned)](README.md) · [Next: Chapter 25 — Monitoring Models in Production](chapter-25-monitoring-models-in-production.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)
