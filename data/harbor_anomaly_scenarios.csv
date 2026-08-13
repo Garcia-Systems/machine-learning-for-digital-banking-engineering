@@ -1,0 +1,7 @@
+scenario,timestamp,api_latency_ms,error_rate,db_connections,queue_depth,vendor_latency_ms,requests_per_minute
+normal_morning,2026-01-06T09:00:00Z,195,0.0045,32,12,260,450
+normal_busy_period,2026-01-06T11:30:00Z,225,0.0055,36,16,285,525
+vendor_slowdown,2026-01-06T09:05:00Z,310,0.009,39,22,1450,480
+queue_pressure,2026-01-06T09:10:00Z,325,0.01,44,95,380,510
+broad_system_pressure,2026-01-06T09:15:00Z,680,0.025,69,82,980,720
+subtle_combination,2026-01-06T09:20:00Z,430,0.012,48,36,650,620
