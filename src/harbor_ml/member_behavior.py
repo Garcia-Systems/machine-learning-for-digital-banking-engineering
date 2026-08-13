@@ -17,10 +17,15 @@ EVENT_VOCABULARY = frozenset(
         "recipient_selected", "transfer_reviewed", "transfer_completed",
         "transfer_failed", "help_opened", "verification_started", "verification_completed",
         "verification_abandoned", "statement_viewed", "session_ended",
+        "landing_page_viewed", "product_details_viewed", "eligibility_info_viewed",
+        "application_started",
     }
 )
 VALID_CHANNELS = frozenset({"web", "mobile"})
-EVENT_COLUMNS = ("timestamp", "session_id", "event_name", "channel", "journey")
+EVENT_COLUMNS = (
+    "timestamp", "session_id", "event_name", "channel", "journey",
+    "landing_source", "device_category",
+)
 TRANSFER_FUNNEL = (
     "transfer_started", "recipient_selected", "transfer_reviewed", "transfer_completed"
 )
@@ -34,6 +39,8 @@ class MemberEvent:
     event_name: str
     channel: str
     journey: str | None
+    landing_source: str | None = None
+    device_category: str | None = None
 
 
 @dataclass(frozen=True)
@@ -88,7 +95,9 @@ def load_member_events(path: str | Path) -> list[MemberEvent]:
         session_id = row["session_id"].strip()
         event_name = row["event_name"].strip()
         channel = row["channel"].strip()
-        journey = row["journey"].strip() or None
+        journey = (row["journey"] or "").strip() or None
+        landing_source = (row["landing_source"] or "").strip() or None
+        device_category = (row["device_category"] or "").strip() or None
         if not _SESSION_ID.fullmatch(session_id):
             raise ValueError(f"row {number}: invalid or missing session_id")
         if event_name not in EVENT_VOCABULARY:
@@ -97,7 +106,7 @@ def load_member_events(path: str | Path) -> list[MemberEvent]:
             raise ValueError(f"row {number}: invalid channel {channel!r}")
         events.append(MemberEvent(
             _parse_timestamp(row["timestamp"].strip(), number), session_id,
-            event_name, channel, journey,
+            event_name, channel, journey, landing_source, device_category,
         ))
     return sorted(events, key=lambda event: (event.session_id, event.timestamp, event.event_name))
 

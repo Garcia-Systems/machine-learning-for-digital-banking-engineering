@@ -95,6 +95,28 @@ __all__ += [
     "train_anomaly_detector",
 ]
 
+from .conversion_model import (  # noqa: E402
+    CATEGORICAL_CONVERSION_FEATURES, CONVERSION_FEATURES, CONVERSION_RANDOM_STATE,
+    CONVERSION_TARGET, NUMERIC_CONVERSION_FEATURES, ConversionDatasetSplit,
+    ConversionEvaluation, ConversionPrediction, ConversionSnapshot,
+    PartialConversionState, build_conversion_features, build_conversion_pipeline,
+    build_conversion_snapshots, build_conversion_targets, calculate_conversion_rate,
+    calculate_majority_baseline, classify_conversion, evaluate_conversion_model,
+    predict_conversion, predict_conversion_probability, split_conversion_dataset,
+    train_conversion_model,
+)
+
+__all__ += [
+    "CATEGORICAL_CONVERSION_FEATURES", "CONVERSION_FEATURES", "CONVERSION_RANDOM_STATE",
+    "CONVERSION_TARGET", "NUMERIC_CONVERSION_FEATURES", "ConversionDatasetSplit",
+    "ConversionEvaluation", "ConversionPrediction", "ConversionSnapshot",
+    "PartialConversionState", "build_conversion_features", "build_conversion_pipeline",
+    "build_conversion_snapshots", "build_conversion_targets", "calculate_conversion_rate",
+    "calculate_majority_baseline", "classify_conversion", "evaluate_conversion_model",
+    "predict_conversion", "predict_conversion_probability", "split_conversion_dataset",
+    "train_conversion_model",
+]
+
 from .journey_abandonment import (  # noqa: E402
     BOOLEAN_JOURNEY_FEATURES, CATEGORICAL_JOURNEY_FEATURES, JOURNEY_FEATURES,
     JOURNEY_RANDOM_STATE, JOURNEY_TARGET, NUMERIC_JOURNEY_FEATURES,

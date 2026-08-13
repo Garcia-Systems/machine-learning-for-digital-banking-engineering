@@ -20,6 +20,8 @@ ARCHETYPES = {
 
 
 def journey(event: str) -> str:
+    if event in {"landing_page_viewed", "product_details_viewed", "eligibility_info_viewed", "application_started"}:
+        return "horizon_savings"
     if event.startswith("transfer") or event == "recipient_selected":
         return "transfer"
     if event.startswith("verification"):
@@ -50,7 +52,8 @@ def main() -> None:
             timestamp += timedelta(seconds=randomizer.randint(3, 28))
             rows.append({"timestamp": timestamp.isoformat().replace("+00:00", "Z"),
                          "session_id": session_id, "event_name": name,
-                         "channel": channel, "journey": journey(name)})
+                         "channel": channel, "journey": journey(name),
+                         "landing_source": "", "device_category": ""})
 
     # Chapter 9 adds noisy transfer histories to the same behavioral universe.
     # Future completion is sampled from overlapping synthetic relationships; no
@@ -94,16 +97,61 @@ def main() -> None:
                 timestamp += timedelta(seconds=randomizer.randint(3, 22))
             rows.append({"timestamp": timestamp.isoformat().replace("+00:00", "Z"),
                          "session_id": session_id, "event_name": name,
-                         "channel": channel, "journey": journey(name)})
+                         "channel": channel, "journey": journey(name),
+                         "landing_source": "", "device_category": ""})
+
+    # Chapter 10 adds product-information sessions. Relationships overlap and
+    # include random outcome noise; all categories and effects are fictional.
+    sources = ("direct", "search", "email_campaign", "internal_navigation")
+    for offset in range(500):
+        session_id = f"session-{3000 + offset}"
+        channel = "mobile" if randomizer.random() < 0.49 else "web"
+        device = (randomizer.choices(("phone", "tablet"), (0.87, 0.13))[0]
+                  if channel == "mobile" else randomizer.choices(("desktop", "tablet"), (0.91, 0.09))[0])
+        source = randomizer.choices(sources, (0.27, 0.29, 0.18, 0.26))[0]
+        failures = int(randomizer.random() < 0.12)
+        searches = randomizer.choices((0, 1, 2, 3), (0.58, 0.25, 0.12, 0.05))[0]
+        helps = randomizer.choices((0, 1, 2), (0.76, 0.19, 0.05))[0]
+        delay = randomizer.randint(25, 105) + 18 * searches + 25 * helps + 20 * failures
+        score = (-0.85 - 0.007 * (delay - 65) - 0.31 * searches - 0.35 * helps
+                 - 0.34 * failures + 0.22 * (source == "internal_navigation")
+                 + 0.14 * (source == "email_campaign") - 0.14 * (device == "phone"))
+        probability = 1 / (1 + pow(2.718281828, -score))
+        converted = randomizer.random() < probability
+        prefix = ["session_started"]
+        if failures:
+            prefix.append("login_failed")
+        prefix.append("landing_page_viewed")
+        friction = ["search_performed"] * searches + ["help_opened"] * helps
+        randomizer.shuffle(friction)
+        prefix.extend(friction)
+        prefix.append("product_details_viewed")
+        suffix = []
+        if randomizer.random() < 0.62:
+            suffix.append("eligibility_info_viewed")
+        if converted:
+            suffix.append("application_started")
+        elif randomizer.random() < 0.15:
+            suffix.append("search_performed")  # future, never a feature
+        names = [*prefix, *suffix, "session_ended"]
+        timestamp = start + timedelta(days=5, minutes=offset * 5)
+        for name in names:
+            timestamp += timedelta(seconds=max(3, delay // max(1, len(prefix) - 1))
+                                   if name in prefix[1:] else randomizer.randint(4, 24))
+            rows.append({"timestamp": timestamp.isoformat().replace("+00:00", "Z"),
+                         "session_id": session_id, "event_name": name,
+                         "channel": channel, "journey": journey(name),
+                         "landing_source": source, "device_category": device})
     with OUTPUT.open("w", newline="", encoding="utf-8") as target:
         writer = csv.DictWriter(
             target,
-            fieldnames=("timestamp", "session_id", "event_name", "channel", "journey"),
+            fieldnames=("timestamp", "session_id", "event_name", "channel", "journey",
+                        "landing_source", "device_category"),
             lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(rows)
-    print(f"Wrote {len(rows)} events in 390 sessions to {OUTPUT}")
+    print(f"Wrote {len(rows)} events in 890 sessions to {OUTPUT}")
 
 
 if __name__ == "__main__":

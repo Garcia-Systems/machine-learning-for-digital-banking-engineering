@@ -436,6 +436,4 @@ CONVERSION MODEL
 estimates whether a desired digital action will occur
 ```
 
-Chapter 10 remains planned and is not implemented here.
-
-[Back to the Part III overview](README.md) · [Back to complete contents](../../CONTENTS.md) · Next: Chapter 10 — Conversion Prediction *(planned)*
+[Back to the Part III overview](README.md) · [Back to complete contents](../../CONTENTS.md) · [Next: Chapter 10 — Conversion Prediction](chapter-10-conversion-prediction.md)
