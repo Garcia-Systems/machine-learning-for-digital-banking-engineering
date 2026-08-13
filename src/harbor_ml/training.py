@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import csv
-import hashlib
 import json
 import platform
 from dataclasses import asdict, dataclass
@@ -18,6 +17,7 @@ import sklearn
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.pipeline import Pipeline
 
+from .data_security import calculate_file_sha256, validate_dataset_columns
 from .integration_failure_model import (
     CATEGORICAL_FEATURES,
     NUMERIC_FEATURES,
@@ -99,15 +99,6 @@ class TrainingResult:
     dataset_sha256: str
 
 
-def calculate_file_sha256(path: str | Path) -> str:
-    """Identify the exact file bytes used by a run; this is not a quality proof."""
-    digest = hashlib.sha256()
-    with Path(path).open("rb") as source:
-        for block in iter(lambda: source.read(64 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
-
-
 def validate_training_dataset(path: str | Path, *, minimum_rows: int = MINIMUM_TRAINING_ROWS):
     """Validate the focused Chapter 16 CSV contract before any fitting occurs."""
     dataset = Path(path)
@@ -122,6 +113,7 @@ def validate_training_dataset(path: str | Path, *, minimum_rows: int = MINIMUM_T
     missing = [name for name in REQUIRED_COLUMNS if name not in header]
     if missing:
         raise ValueError("missing required training columns: " + ", ".join(missing))
+    validate_dataset_columns(header)
     leaked = PROHIBITED_LEAKAGE_COLUMNS.intersection(PREDICTION_FEATURES)
     if leaked:
         raise ValueError("declared features contain post-outcome leakage: " + ", ".join(sorted(leaked)))

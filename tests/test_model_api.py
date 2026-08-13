@@ -5,7 +5,8 @@ from unittest.mock import patch
 import pytest
 from fastapi.testclient import TestClient
 
-from harbor_ml.api import ModelRuntime, create_app
+from harbor_ml.api import IntegrationFailureRequest, ModelRuntime, create_app
+from harbor_ml.data_security import APPROVED_INTEGRATION_FEATURES, PROHIBITED_SENSITIVE_FIELDS
 from harbor_ml.training import (
     save_model_artifact,
     save_training_metadata,
@@ -121,3 +122,8 @@ def test_metadata_feature_contract_is_validated(assets, tmp_path):
     path.write_text(json.dumps(metadata))
     with pytest.raises(RuntimeError, match="incompatible categorical_features"):
         ModelRuntime.load(assets[0], path)
+
+
+def test_request_schema_matches_security_allowlist_and_excludes_prohibited_fields():
+    assert set(IntegrationFailureRequest.model_fields) == set(APPROVED_INTEGRATION_FEATURES)
+    assert not set(IntegrationFailureRequest.model_fields) & PROHIBITED_SENSITIVE_FIELDS
