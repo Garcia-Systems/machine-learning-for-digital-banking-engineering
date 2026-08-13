@@ -5,7 +5,7 @@ Datasets here are small, synthetic, and created solely for education. Chapter 1'
 contains no member or transaction records. Do not add real member, transaction,
 credential, vendor, or proprietary banking data.
 
-Chapter 2's `harbor_request_outcomes.csv` contains 30 deterministic, fictional
-vendor-request observations and binary teaching labels. It exists to make the
-feature/target distinction executable; it is not statistically realistic and does
-not represent a real banking distribution.
+Chapters 2 and 3 use `harbor_request_outcomes.csv`, which contains 30
+deterministic, fictional vendor-request observations and binary teaching labels.
+It makes feature/target separation and a small train/test pipeline executable; it
+is not statistically realistic and does not represent a real banking distribution.

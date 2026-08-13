@@ -18,6 +18,20 @@ from .problem_framing import (
     RequestOutcome,
     load_request_outcomes,
 )
+from .request_failure_model import (
+    FEATURE_NAMES,
+    RANDOM_STATE,
+    DatasetSplit,
+    EvaluationResult,
+    FailurePrediction,
+    build_feature_matrix,
+    build_model,
+    build_target_vector,
+    evaluate_model,
+    predict_request_failure,
+    split_dataset,
+    train_model,
+)
 
 __all__ = [
     "Observation",
@@ -33,7 +47,19 @@ __all__ = [
     "TelemetrySummary",
     "Thresholds",
     "find_threshold_violations",
+    "FEATURE_NAMES",
+    "RANDOM_STATE",
+    "DatasetSplit",
+    "EvaluationResult",
+    "FailurePrediction",
+    "build_feature_matrix",
+    "build_model",
+    "build_target_vector",
+    "evaluate_model",
     "load_telemetry",
     "load_request_outcomes",
+    "predict_request_failure",
+    "split_dataset",
     "summarize_telemetry",
+    "train_model",
 ]
