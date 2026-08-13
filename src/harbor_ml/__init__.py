@@ -206,3 +206,28 @@ __all__ += [
     "split_integration_dataset",
     "train_integration_model",
 ]
+
+from .member_behavior import (  # noqa: E402
+    EVENT_COLUMNS,
+    EVENT_VOCABULARY,
+    TRANSFER_FUNNEL,
+    VALID_CHANNELS,
+    BehaviorStatistics,
+    MemberEvent,
+    SessionSummary,
+    calculate_behavior_statistics,
+    calculate_transfer_funnel,
+    count_events,
+    group_events_by_session,
+    load_member_events,
+    summarize_session,
+    summarize_sessions,
+)
+
+__all__ += [
+    "EVENT_COLUMNS", "EVENT_VOCABULARY", "TRANSFER_FUNNEL", "VALID_CHANNELS",
+    "BehaviorStatistics", "MemberEvent", "SessionSummary",
+    "calculate_behavior_statistics", "calculate_transfer_funnel", "count_events",
+    "group_events_by_session", "load_member_events", "summarize_session",
+    "summarize_sessions",
+]
