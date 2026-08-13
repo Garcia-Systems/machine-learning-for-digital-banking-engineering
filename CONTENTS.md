@@ -3,7 +3,7 @@
 ## Part I — From Full-Stack Engineering to ML-Assisted Engineering
 
 0. [The ML-Assisted Full-Stack Developer](book/part-01-ml-assisted-engineering/chapter-00-the-ml-assisted-full-stack-developer.md)
-1. The Digital Banking Data Landscape
+1. [The Digital Banking Data Landscape](book/part-01-ml-assisted-engineering/chapter-01-the-digital-banking-data-landscape.md)
 2. From Engineering Problem to ML Problem
 3. The Machine Learning Pipeline
 
