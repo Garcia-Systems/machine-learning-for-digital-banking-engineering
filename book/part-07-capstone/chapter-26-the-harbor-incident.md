@@ -395,6 +395,6 @@ TIME ALIGNMENT
 CAPSTONE DATASET
 ```
 
-It will focus on schemas, timestamps, joins, windows, missing data, source semantics, feature availability, leakage avoidance, and dataset validation. **Chapter 27 remains planned and is not implemented here.**
+It focuses on schemas, timestamps, joins, windows, missing data, source semantics, feature availability, leakage avoidance, and dataset validation.
 
-[Previous: Chapter 25 — Monitoring Models in Production](../part-06-responsible-ml/chapter-25-monitoring-models-in-production.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 27 — Building the Telemetry Dataset *(planned)*
+[Previous: Chapter 25 — Monitoring Models in Production](../part-06-responsible-ml/chapter-25-monitoring-models-in-production.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 27 — Building the Telemetry Dataset](chapter-27-building-the-telemetry-dataset.md)
