@@ -545,7 +545,7 @@ Chapter 25 completes Part VI's executable implementation while Chapter 23 remain
 
 ## What comes next: Part VII — Capstone: The Intelligent Digital Credit Union
 
-The next planned chapter is **Chapter 26 — The Harbor Incident**. It will combine the earlier ideas; it is not implemented here.
+Continue to **Chapter 26 — The Harbor Incident**, which combines the earlier ideas in a time-ordered, executable capstone investigation.
 
 ```text
 Harbor system healthy
@@ -571,4 +571,4 @@ engineer investigates
 
 The capstone will require readers to distinguish **observation**, **prediction**, **explanation**, **hypothesis**, **diagnosis**, **policy**, and **action**. None is a substitute for the others.
 
-[Previous: Chapter 24 — Human-in-the-Loop Systems](chapter-24-human-in-the-loop-systems.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 26 — The Harbor Incident *(planned)*
+[Previous: Chapter 24 — Human-in-the-Loop Systems](chapter-24-human-in-the-loop-systems.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 26 — The Harbor Incident](../part-07-capstone/chapter-26-the-harbor-incident.md)
