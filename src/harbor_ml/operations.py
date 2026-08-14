@@ -7,7 +7,6 @@ from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from typing import Sequence
 
 from fastapi import HTTPException
 
@@ -22,6 +21,7 @@ from .capstone_incident_classifier import (create_capstone_incident_metadata,
 from .dashboard.service import build_capstone_dashboard, classify_availability
 from .data_security import SensitiveFieldError, validate_prediction_payload_fields
 from .explainability import explain_linear_prediction
+from .fairness_slices import TechnicalSliceMetric, evaluate_technical_slices
 from .human_review import (InMemoryReviewRepository, ReviewRoutingPolicy, ReviewerReason,
     ReviewStatus, create_review_case)
 from .integration_failure_model import (IntegrationRequest, build_integration_features,
@@ -47,15 +47,6 @@ class ArtifactInventoryItem:
 
 
 @dataclass(frozen=True)
-class SliceMetric:
-    feature: str
-    value: str
-    support: int
-    base_rate: float
-    error_rate: float
-
-
-@dataclass(frozen=True)
 class HarborOperatingReport:
     dataset_rows: int
     inventory: tuple[ArtifactInventoryItem, ...]
@@ -70,7 +61,7 @@ class HarborOperatingReport:
     review_prediction: float
     review_outcome: str
     explanation_delta: float
-    slices: tuple[SliceMetric, ...]
+    slices: tuple[TechnicalSliceMetric, ...]
     sensitive_field_rejected: bool
     rollback_version: str
 
@@ -85,23 +76,6 @@ def artifact_inventory(config: ServiceConfig) -> tuple[ArtifactInventoryItem, ..
             str(metadata.get("dataset_sha256", "unknown")),
             str(metadata.get("trained_at", "unknown")), str(metadata["model_type"])))
     return tuple(items)
-
-
-def calculate_slice_metrics(observations, probabilities: Sequence[float], *, threshold=.5
-                            ) -> tuple[SliceMetric, ...]:
-    """Report operational vendor/endpoint slices; this is not demographic fairness."""
-    if len(observations) != len(probabilities):
-        raise ValueError("observations and probabilities must align")
-    result = []
-    for feature in ("vendor", "endpoint"):
-        for value in sorted({str(getattr(row, feature)) for row in observations}):
-            indexes = [i for i, row in enumerate(observations) if str(getattr(row, feature)) == value]
-            labels = [observations[i].request_failed for i in indexes]
-            errors = [int((probabilities[i] >= threshold) != bool(labels[n]))
-                      for n, i in enumerate(indexes)]
-            result.append(SliceMetric(feature, value, len(indexes),
-                                      sum(labels) / len(labels), sum(errors) / len(errors)))
-    return tuple(result)
 
 
 def _call(app, path: str, request=None):
@@ -220,7 +194,7 @@ def run_operating_laboratory(root: str | Path) -> HarborOperatingReport:
         except SensitiveFieldError:
             rejected = True
 
-        slices = calculate_slice_metrics(observations, probabilities)
+        slices = evaluate_technical_slices(observations, probabilities)
         # Runtime swap: a candidate identity can be deployed, then the retained v1 runtime restored.
         prior_version = runtimes.integration_failure.identity.version
         candidate_runtime = replace(runtimes.integration_failure,

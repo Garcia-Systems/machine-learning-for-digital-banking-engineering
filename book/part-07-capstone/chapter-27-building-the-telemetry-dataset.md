@@ -327,7 +327,7 @@ Source ages are excellent validation/debug information, but are not automaticall
 | `incident_type` | string | synthetic scenario history | **no—label only** | known historical taxonomy | one Chapter 5 class; absent from features |
 | `request_failed` | integer | request outcome | **no—target only** | eventual binary outcome | 0/1; completion after prediction |
 
-The base capstone CSV uses `incident_type` to support future chapters: anomaly training can select `normal`; classification can use known synthetic labels. The fixture represents normal, vendor-degradation, and later database-pressure/compound periods. Counts for the other valid Chapter 5 classes are explicitly zero rather than fabricated. The label organizes synthetic historical examples; it is not a causal feature or a model prediction.
+The base capstone CSV uses `incident_type` for Chapters 28 and 29: anomaly training selects `normal`; classification uses known synthetic labels. The fixture represents normal, vendor-degradation, and later database-pressure/compound periods. Counts for the other valid Chapter 5 classes are explicitly zero rather than fabricated. The label organizes synthetic historical examples; it is not a causal feature or a model prediction.
 
 ## Validation and duplicate policy
 

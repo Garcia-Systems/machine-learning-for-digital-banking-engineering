@@ -1,6 +1,10 @@
 """Run the Chapter 11 member behavior segmentation laboratory."""
 
 from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 
 from harbor_ml.member_behavior import group_events_by_session, load_member_events
 from harbor_ml.member_segmentation import (
@@ -15,9 +19,6 @@ from harbor_ml.member_segmentation import (
     summarize_clusters,
     train_segmentation_model,
 )
-
-ROOT = Path(__file__).resolve().parents[1]
-
 
 def description(means: dict[str, float]) -> str:
     """Create a neutral analyst description from a summary, not a model target."""

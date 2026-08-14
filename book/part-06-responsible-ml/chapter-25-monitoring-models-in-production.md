@@ -450,7 +450,7 @@ several consecutive windows      → stronger investigation signal
 
 ## Monitor technical slices responsibly
 
-Chapter 23 remains planned, but the principle is clear: when labels arrive, compare performance by approved operational slices such as `vendor` and `endpoint`, and compare each with its deployment baseline. Aggregate performance can hide uneven degradation. Small slices need minimum support too.
+Chapter 23 established that when labels arrive, Harbor compares performance by approved operational slices such as `vendor` and `endpoint`, and compares each with its deployment baseline. Aggregate performance can hide uneven degradation. Small slices need explicit low-support labels too.
 
 Do not add sensitive demographic attributes merely to simplify this lab. Chapter 21's security boundary still applies. Log approved monitoring fields rather than entire requests. Prediction/outcome data needs access control, purpose limitation, retention decisions, integrity protection, and auditability even when direct member identity is absent.
 

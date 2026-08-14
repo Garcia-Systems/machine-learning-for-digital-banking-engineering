@@ -2,6 +2,8 @@
 
 **An Executable Textbook for Full-Stack Developers**
 
+**Status: Complete — seven Parts, 34 Chapters (0–33).**
+
 This textbook teaches experienced application developers how to use machine learning as an engineering tool for understanding, troubleshooting, operating, and improving digital banking systems. It connects operational telemetry, APIs, databases, automated tests, and production reasoning to progressively introduced ML techniques. It is not primarily a data-science or mathematics textbook.
 
 ## Who this book is for
@@ -51,6 +53,7 @@ python examples/chapter_18_model_api.py
 python examples/chapter_20_monitoring_dashboard.py
 python examples/chapter_21_data_security.py
 python examples/chapter_22_explainability.py
+python examples/chapter_23_bias_and_fairness.py
 python examples/chapter_24_human_in_the_loop.py
 python examples/chapter_25_model_monitoring.py
 python examples/chapter_26_harbor_incident.py
@@ -66,6 +69,11 @@ python scripts/train_capstone_incident_classifier.py
 python scripts/audit_ml_data.py
 pytest
 ```
+
+For a single repository-wide check after installing both language environments, run
+`scripts/validate-all.sh`. It verifies book structure and links, Python tests and
+syntax, the sensitive-data fixture guard, PHP tests and syntax, and the final capstone
+laboratory without requiring a running server or external infrastructure.
 
 Chapter 19 and Chapter 31 use a focused PHP 8.2+ package:
 
@@ -99,6 +107,29 @@ PYTHONPATH=src uvicorn harbor_ml.dashboard.run:app --reload --port 8001
 
 The master lab does not need either server running; it uses in-process application boundaries so automated validation remains deterministic and network-independent.
 
+## Architecture
+
+```text
+synthetic data
+      ↓
+training
+      ↓
+versioned local artifacts
+      ↓
+Python ML service
+      ↓
+PHP application boundary
+      ↓
+engineering dashboard
+      ↓
+human / deterministic investigation
+      ↓
+production-style model monitoring
+```
+
+This is an executable teaching laboratory modeling production-shaped engineering
+practices with entirely synthetic data—not a production-ready banking ML system.
+
 ## Responsible-use boundaries
 
 Machine learning supplies anomaly, classification, and failure-risk signals. It does not authenticate or authorize a member, validate a transaction, prove fraud or root cause, replace traces and database evidence, or make a final human-review decision. Unavailability is never converted to a low-risk score. Model, API, and policy versions remain separate; stale results and ambiguity remain visible; monitoring prompts investigation rather than automatic deployment.
@@ -108,10 +139,11 @@ All fixtures and results are fictional educational material. Completing the text
 ## Repository map
 
 - [`CONTENTS.md`](CONTENTS.md) — complete roadmap for the book.
-- [`book/`](book/) — seven-part narrative, ending with Chapter 33's complete capstone operating exam (Chapter 23 remains a roadmap entry).
-- [`php/`](php/) — Chapter 19 PHP adapter, laboratory, and PHPUnit tests.
+- [`book/`](book/) — seven-part narrative with Chapters 0–33, ending in the capstone operating exam.
+- [`php/`](php/) — Chapters 19 and 31 PHP gateway, application integration, examples, and PHPUnit tests.
 - [`src/harbor_ml/`](src/harbor_ml/) — reusable, typed Python components.
 - [`examples/`](examples/) — command-line examples.
 - [`tests/`](tests/) — automated checks for executable material.
 - [`data/`](data/) — small synthetic educational data fixtures and their documentation.
-- `docs/` — reserved for supporting documentation as the book grows.
+- [`scripts/`](scripts/) — deterministic fixture generators, artifact trainers, security audit, and master validation.
+- `docs/` — reserved for supporting documentation.
