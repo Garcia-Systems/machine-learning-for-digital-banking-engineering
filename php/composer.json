@@ -1,6 +1,6 @@
 {
-    "name": "harbor-federal/chapter-19-ml-client",
-    "description": "Harbor Federal Credit Union's educational PHP adapter for the Chapter 18 ML API",
+    "name": "harbor-federal/ml-client",
+    "description": "Harbor Federal Credit Union's educational PHP gateway for the versioned ML API",
     "license": "MIT",
     "type": "library",
     "require": {

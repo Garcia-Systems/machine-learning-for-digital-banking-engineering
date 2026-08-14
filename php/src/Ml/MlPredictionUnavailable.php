@@ -6,6 +6,6 @@ namespace Harbor\Ml;
 
 use RuntimeException;
 
-final class MlPredictionUnavailable extends RuntimeException
+class MlPredictionUnavailable extends RuntimeException
 {
 }

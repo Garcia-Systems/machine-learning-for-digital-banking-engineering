@@ -1,6 +1,6 @@
 # Chapter 30 — Building the ML Service
 
-[Previous: Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 31 — Integrating the Banking Application *(planned)*
+[Previous: Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 31 — Integrating the Banking Application](chapter-31-integrating-the-banking-application.md)
 
 **Central question:** How can Harbor expose several independently trained ML models through one reliable, versioned Python service without coupling the banking application to scikit-learn internals?
 
@@ -439,6 +439,6 @@ ML GATEWAY / CLIENT
 APPLICATION OBSERVABILITY
 ```
 
-It will cover typed anomaly and incident DTOs, a shared ML gateway, sequential/parallel tradeoffs, timeouts, partial ML failure, application-level observation aggregation, deterministic business outcomes, and integration tests. **Chapter 31 remains planned and is not implemented here.**
+It will cover typed anomaly and incident DTOs, a shared ML gateway, sequential/parallel tradeoffs, timeouts, partial ML failure, application-level observation aggregation, deterministic business outcomes, and integration tests. Continue with the implemented Chapter 31 gateway and application integration.
 
-[Previous: Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 31 — Integrating the Banking Application *(planned)*
+[Previous: Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 31 — Integrating the Banking Application](chapter-31-integrating-the-banking-application.md)
