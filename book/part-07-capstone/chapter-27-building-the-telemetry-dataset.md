@@ -440,6 +440,6 @@ anomaly score
 incident timeline
 ```
 
-It will cover baseline selection, the feature contract, artifact and metadata, threshold semantics, and evaluation against synthetic incident periods—without claiming anomaly means root cause. **Chapter 28 remains planned and is not implemented here.**
+It will cover baseline selection, the feature contract, artifact and metadata, threshold semantics, and evaluation against synthetic incident periods—without claiming anomaly means root cause.
 
-[Previous: Chapter 26 — The Harbor Incident](chapter-26-the-harbor-incident.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 28 — Training the Anomaly Detector *(planned)*
+[Previous: Chapter 26 — The Harbor Incident](chapter-26-the-harbor-incident.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 28 — Training the Anomaly Detector](chapter-28-training-the-anomaly-detector.md)
