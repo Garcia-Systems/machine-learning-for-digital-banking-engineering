@@ -8,9 +8,9 @@ Part VII integrates the engineering and machine-learning tools already built for
 - [Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md)
 - [Chapter 30 — Building the ML Service](chapter-30-building-the-ml-service.md)
 - [Chapter 31 — Integrating the Banking Application](chapter-31-integrating-the-banking-application.md)
-- Chapter 32 — Building the Engineering Dashboard *(planned)*
+- [Chapter 32 — Building the Engineering Dashboard](chapter-32-building-the-engineering-dashboard.md)
 - Chapter 33 — Operating the Intelligent Digital Credit Union *(planned)*
 
-Chapters 26–31 are implemented. Chapters 32–33 remain planned.
+Chapters 26–32 are implemented. Chapter 33 remains planned.
 
 [Back to the complete contents](../../CONTENTS.md)

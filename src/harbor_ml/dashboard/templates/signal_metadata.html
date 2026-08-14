@@ -1,0 +1,1 @@
+<dl class="metadata"><dt>Model</dt><dd>{{ s.metadata.model_name }}</dd><dt>Version</dt><dd>{{ s.metadata.model_version or 'unavailable' }}</dd><dt>Prediction age</dt><dd>{{ '%.0f seconds'|format(s.metadata.prediction_age_seconds) }}</dd><dt>Freshness</dt><dd class="status">{{ 'CURRENT' if s.metadata.availability.value == 'AVAILABLE' else s.metadata.availability.value }}</dd></dl>
