@@ -351,6 +351,8 @@ compare errors
 identify uneven behavior
 ```
 
-Chapter 23 remains planned.
+Chapter 23 applies that progression to approved technical contexts, reporting counts,
+base rates, precision, recall, false-positive rates, false-negative rates, and
+low-support labels without introducing demographic data.
 
-[Previous: Chapter 21](chapter-21-security-and-sensitive-financial-data.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)
+[Previous: Chapter 21](chapter-21-security-and-sensitive-financial-data.md) · [Next: Chapter 23 — Bias and Fairness](chapter-23-bias-and-fairness.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)

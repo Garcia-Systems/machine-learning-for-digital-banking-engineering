@@ -473,3 +473,5 @@ Apply the same discipline to approved real datasets; deepen statistics and ML th
 Harbor is not intelligent because it contains machine learning.
 
 Harbor is intelligently engineered because each subsystem has a clear responsibility, every prediction has defined semantics, deterministic controls remain authoritative, uncertainty stays visible, models are measured and monitored, and engineers retain the evidence and judgment needed to operate the system safely.
+
+[Previous: Chapter 32 — Building the Engineering Dashboard](chapter-32-building-the-engineering-dashboard.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md)

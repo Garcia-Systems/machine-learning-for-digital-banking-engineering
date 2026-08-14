@@ -562,7 +562,7 @@ DIGITAL EXPERIENCE DATA
 How are members interacting with the system?
 ```
 
-Future fictional event types may include:
+The next Part's fictional event vocabulary includes:
 
 ```text
 session_started

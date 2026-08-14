@@ -281,7 +281,7 @@ Act
 
 ## What comes next: Chapter 33 — Operating the Intelligent Digital Credit Union
 
-Chapter 32 completes Harbor's technical presentation layer. Chapter 33 remains unimplemented. It will ask what the reader built, how it should be operated, and what responsible ML-assisted full-stack engineering looks like as a complete discipline:
+Chapter 32 completes Harbor's technical presentation layer. Chapter 33 brings the implemented system together as an operating exam and asks what responsible ML-assisted full-stack engineering looks like as a complete discipline:
 
 ```text
 DATA CONTRACT → TRAINING → EVALUATION → ARTIFACT → ML SERVICE
@@ -291,4 +291,4 @@ DATA CONTRACT → TRAINING → EVALUATION → ARTIFACT → ML SERVICE
 
 The final synthesis will cover complete validation and run order; incident, ML-outage, stale-model, rollback, and human-review exercises; a security/fairness/explainability checklist; what ML helped with and did not establish; and final architectural principles.
 
-[Previous: Chapter 31 — Integrating the Banking Application](chapter-31-integrating-the-banking-application.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 33 — Operating the Intelligent Digital Credit Union *(planned)*
+[Previous: Chapter 31 — Integrating the Banking Application](chapter-31-integrating-the-banking-application.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 33 — Operating the Intelligent Digital Credit Union](chapter-33-operating-the-intelligent-digital-credit-union.md)
