@@ -47,7 +47,7 @@
 ## Part VII — Capstone: The Intelligent Digital Credit Union
 
 26. [The Harbor Incident](book/part-07-capstone/chapter-26-the-harbor-incident.md)
-27. Building the Telemetry Dataset
+27. [Building the Telemetry Dataset](book/part-07-capstone/chapter-27-building-the-telemetry-dataset.md)
 28. Training the Anomaly Detector
 29. Training the Incident Classifier
 30. Building the ML Service

@@ -3,7 +3,7 @@
 Part VII integrates the engineering and machine-learning tools already built for fictional **Harbor Federal Credit Union**. It introduces no new algorithm. Instead, it asks how telemetry, predictions, metadata, explanations, policy, and human investigation work together without turning resemblance into diagnosis.
 
 - [Chapter 26 — The Harbor Incident](chapter-26-the-harbor-incident.md)
-- Chapter 27 — Building the Telemetry Dataset *(planned)*
+- [Chapter 27 — Building the Telemetry Dataset](chapter-27-building-the-telemetry-dataset.md)
 - Chapter 28 — Training the Anomaly Detector *(planned)*
 - Chapter 29 — Training the Incident Classifier *(planned)*
 - Chapter 30 — Building the ML Service *(planned)*
@@ -11,6 +11,6 @@ Part VII integrates the engineering and machine-learning tools already built for
 - Chapter 32 — Building the Engineering Dashboard *(planned)*
 - Chapter 33 — Operating the Intelligent Digital Credit Union *(planned)*
 
-Chapter 26 is implemented. Chapters 27–33 remain planned.
+Chapters 26–27 are implemented. Chapters 28–33 remain planned.
 
 [Back to the complete contents](../../CONTENTS.md)

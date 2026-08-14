@@ -77,3 +77,11 @@ seed 1515. Simplified query families, estimated row bands, query-shape flags, an
 current system-state values produce a noisy, nonlinear duration target for teaching
 pre-execution regression. It contains no SQL, real schema, member records, or real
 production measurements and does not represent credit-union database performance.
+
+Chapter 27 reuses `harbor_capstone_incident.csv`, `harbor_capstone_traces.csv`, and
+`harbor_request_outcomes.csv` through separate typed source views. It writes the
+derived training CSV and SHA-256 metadata only under gitignored
+`artifacts/capstone-dataset/`; no derived dataset is committed. Database latency in
+this compact teaching build is an explicitly named deterministic proxy rather than
+a real instrument. Trace completion evidence and later outcomes are never model
+features. All records remain fictional and privacy-minimized.
