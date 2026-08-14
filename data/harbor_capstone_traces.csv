@@ -1,0 +1,9 @@
+request_id,timestamp,component,duration_ms,status
+capstone-request-001,2026-08-12T10:28:30Z,application_code,38,ok
+capstone-request-001,2026-08-12T10:28:30Z,database_work,71,ok
+capstone-request-001,2026-08-12T10:28:30Z,ClearVerify_call,2218,timeout
+capstone-request-001,2026-08-12T10:28:30Z,retry_delay,83,completed
+capstone-request-002,2026-08-12T10:29:10Z,application_code,41,ok
+capstone-request-002,2026-08-12T10:29:10Z,database_work,76,ok
+capstone-request-002,2026-08-12T10:29:10Z,ClearVerify_call,2094,timeout
+capstone-request-002,2026-08-12T10:29:10Z,retry_delay,90,completed
