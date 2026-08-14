@@ -50,7 +50,7 @@
 27. [Building the Telemetry Dataset](book/part-07-capstone/chapter-27-building-the-telemetry-dataset.md)
 28. [Training the Anomaly Detector](book/part-07-capstone/chapter-28-training-the-anomaly-detector.md)
 29. [Training the Incident Classifier](book/part-07-capstone/chapter-29-training-the-incident-classifier.md)
-30. Building the ML Service
+30. [Building the ML Service](book/part-07-capstone/chapter-30-building-the-ml-service.md)
 31. Integrating the Banking Application
 32. Building the Engineering Dashboard
 33. Operating the Intelligent Digital Credit Union

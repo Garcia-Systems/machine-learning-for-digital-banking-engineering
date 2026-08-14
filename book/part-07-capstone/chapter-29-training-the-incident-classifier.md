@@ -302,6 +302,6 @@ CAPSTONE ML SERVICE
 versioned JSON contracts
 ```
 
-It will cover trusted loading, multiple runtimes, health/readiness, request schemas, stable responses, ambiguity, partial unavailability, and no training in handlers. **Chapter 30 remains planned and is not implemented here.**
+It will cover trusted loading, multiple runtimes, health/readiness, request schemas, stable responses, ambiguity, partial unavailability, and no training in handlers. Chapter 30 implements that service with trusted startup loading, typed contracts, and partial degradation.
 
-[Previous: Chapter 28 — Training the Anomaly Detector](chapter-28-training-the-anomaly-detector.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 30 — Building the ML Service *(planned)*
+[Previous: Chapter 28 — Training the Anomaly Detector](chapter-28-training-the-anomaly-detector.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 30 — Building the ML Service](chapter-30-building-the-ml-service.md)
