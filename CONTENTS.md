@@ -40,7 +40,7 @@
 
 21. [Security and Sensitive Financial Data](book/part-06-responsible-ml/chapter-21-security-and-sensitive-financial-data.md)
 22. [Explainability](book/part-06-responsible-ml/chapter-22-explainability.md)
-23. Bias and Fairness
+23. Bias and Fairness *(planned)*
 24. [Human-in-the-Loop Systems](book/part-06-responsible-ml/chapter-24-human-in-the-loop-systems.md)
 25. [Monitoring Models in Production](book/part-06-responsible-ml/chapter-25-monitoring-models-in-production.md)
 
@@ -53,4 +53,4 @@
 30. [Building the ML Service](book/part-07-capstone/chapter-30-building-the-ml-service.md)
 31. [Integrating the Banking Application](book/part-07-capstone/chapter-31-integrating-the-banking-application.md)
 32. [Building the Engineering Dashboard](book/part-07-capstone/chapter-32-building-the-engineering-dashboard.md)
-33. Operating the Intelligent Digital Credit Union
+33. [Operating the Intelligent Digital Credit Union](book/part-07-capstone/chapter-33-operating-the-intelligent-digital-credit-union.md)
