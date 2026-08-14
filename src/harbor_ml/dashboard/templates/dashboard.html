@@ -1,108 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harbor ML-Assisted Monitoring Dashboard</title>
-  <style>
-    :root { color-scheme: light; font-family: system-ui, sans-serif; }
-    body { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #17212b; background: #f5f7f8; }
-    header, section { background: white; border: 1px solid #ccd4da; border-radius: .35rem; padding: 1rem 1.25rem; margin: 1rem 0; }
-    .status { font-weight: 700; text-transform: uppercase; }
-    dl { display: grid; grid-template-columns: minmax(12rem, 1fr) 2fr; gap: .45rem 1rem; }
-    dt { font-weight: 650; } dd { margin: 0; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { border-bottom: 1px solid #d9e0e4; padding: .5rem; text-align: left; }
-    caption { font-weight: 700; text-align: left; margin-bottom: .5rem; }
-    .notice { border-left: .3rem solid #506d85; padding-left: .75rem; }
-    .warning { font-weight: 650; }
-  </style>
-</head>
-<body>
-<header>
-  <h1>Harbor Federal Credit Union</h1>
-  <p>ML-Assisted Monitoring Dashboard — internal engineering teaching tool</p>
-  <p>Generated timestamp: <time datetime="{{ snapshot.generated_at.isoformat() }}">{{ snapshot.generated_at.isoformat() }}</time></p>
-  <p>Deterministic severity: <span class="status">{{ snapshot.severity }}</span></p>
-</header>
-
-<main>
-<section aria-labelledby="health-heading">
-  <h2 id="health-heading">Observed — system health</h2>
-  <p>These values are direct telemetry observations, not model conclusions.</p>
-  <dl>
-    <dt>API latency</dt><dd>{{ '%.0f'|format(snapshot.telemetry.api_latency_ms) }} ms</dd>
-    <dt>Error rate</dt><dd>{{ '%.1f'|format(snapshot.telemetry.error_rate * 100) }}%</dd>
-    <dt>DB connections</dt><dd>{{ snapshot.telemetry.db_connections }}</dd>
-    <dt>Queue depth</dt><dd>{{ snapshot.telemetry.queue_depth }}</dd>
-    <dt>Vendor latency</dt><dd>{{ '%.0f'|format(snapshot.telemetry.vendor_latency_ms) }} ms</dd>
-    <dt>Requests/minute</dt><dd>{{ '%.0f'|format(snapshot.telemetry.requests_per_minute) }}</dd>
-    <dt>Telemetry timestamp</dt><dd>{{ snapshot.telemetry.timestamp.isoformat() }}</dd>
-  </dl>
-</section>
-
-<section aria-labelledby="ml-heading">
-  <h2 id="ml-heading">Model suggests — ML signals</h2>
-  <p>Prediction status: <span class="status">{{ snapshot.ml_status.value }}</span></p>
-  {% if snapshot.ml_status.value == 'UNAVAILABLE' %}
-    <p class="warning">ML prediction unavailable. Deterministic telemetry remains available; missing values are not zero risk.</p>
-  {% else %}
-    {% if snapshot.ml_status.value == 'STALE' %}<p class="warning">This prediction is stale and must not be treated as current evidence.</p>{% endif %}
-    <dl>
-      <dt>Prediction timestamp</dt><dd>{{ snapshot.prediction_timestamp.isoformat() }}</dd>
-      <dt>Prediction age</dt><dd>{{ '%.0f'|format(snapshot.prediction_age_seconds) }} seconds</dd>
-      <dt>Anomaly status</dt><dd>{{ 'YES' if snapshot.telemetry_anomaly else 'NO' }}</dd>
-      <dt>Anomaly score</dt><dd>{{ '%.4f'|format(snapshot.anomaly_score) }} (unusualness score; not a probability)</dd>
-      <dt>Predicted incident pattern</dt><dd>{{ snapshot.predicted_incident_class }}</dd>
-    </dl>
-    <p>Indicates how unusual the current telemetry appears relative to the learned baseline.</p>
-    {% if snapshot.classification_ambiguous %}<p class="notice">Pattern classification is ambiguous.</p>{% endif %}
-    <table>
-      <caption>Model-assigned incident-class probabilities (not confirmed causes)</caption>
-      <thead><tr><th scope="col">Historical pattern</th><th scope="col">Probability</th></tr></thead>
-      <tbody>{% for label, probability in snapshot.ordered_incident_probabilities %}
-        <tr><td>{{ label }}</td><td>{{ '%.3f'|format(probability) }}</td></tr>
-      {% endfor %}</tbody>
-    </table>
-    <h3>Integration failure signal</h3>
-    <dl>
-      <dt>Failure probability</dt><dd>{{ '%.3f'|format(snapshot.integration_failure_probability) }} — model-assigned risk</dd>
-      <dt>Threshold</dt><dd>{{ '%.2f'|format(snapshot.integration_failure_threshold) }}</dd>
-      <dt>Predicted class</dt><dd>{{ 'elevated failure risk' if snapshot.integration_failure_prediction else 'below elevated-risk threshold' }}</dd>
-      <dt>Model</dt><dd>{{ snapshot.model_name }}</dd>
-      <dt>Model version</dt><dd>{{ snapshot.model_version }}</dd>
-    </dl>
-  {% endif %}
-</section>
-
-<section aria-labelledby="investigate-heading">
-  <h2 id="investigate-heading">Investigate — deterministic guidance</h2>
-  {% if snapshot.investigation_guidance %}
-    <p>The selected historical pattern maps to these application-defined investigation directions:</p>
-    <ul>{% for item in snapshot.investigation_guidance %}<li>{{ item }}</li>{% endfor %}</ul>
-  {% else %}
-    <p>Begin with direct telemetry, traces, and logs. No current model guidance is available.</p>
-  {% endif %}
-  <p class="notice">Model output supports a hypothesis. It is not a confirmed diagnosis; engineers validate causes with evidence.</p>
-</section>
-
-<section aria-labelledby="history-heading">
-  <h2 id="history-heading">Recent prediction history</h2>
-  <table>
-    <caption>Recent deterministic observations and separately labeled model signals</caption>
-    <thead><tr><th scope="col">Time</th><th scope="col">API ms</th><th scope="col">Errors</th><th scope="col">Queue</th><th scope="col">Anomaly</th><th scope="col">Incident pattern</th><th scope="col">Failure probability</th><th scope="col">Status</th><th scope="col">Model version</th></tr></thead>
-    <tbody>{% for item in history %}<tr>
-      <td>{{ item.telemetry.timestamp.strftime('%H:%M') }}</td>
-      <td>{{ '%.0f'|format(item.telemetry.api_latency_ms) }}</td>
-      <td>{{ '%.1f'|format(item.telemetry.error_rate * 100) }}%</td>
-      <td>{{ item.telemetry.queue_depth }}</td>
-      <td>{{ 'yes' if item.telemetry_anomaly else ('no' if item.telemetry_anomaly is not none else 'unavailable') }}</td>
-      <td>{{ item.predicted_incident_class or 'unavailable' }}</td>
-      <td>{{ '%.3f'|format(item.integration_failure_probability) if item.integration_failure_probability is not none else 'unavailable' }}</td>
-      <td>{{ item.ml_status.value }}</td><td>{{ item.model_version or 'unavailable' }}</td>
-    </tr>{% endfor %}</tbody>
-  </table>
-</section>
-</main>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harbor Engineering Dashboard</title><link rel="stylesheet" href="/dashboard/static/dashboard.css"></head><body>
+<header><p class="eyebrow">Harbor Federal Credit Union</p><h1>Engineering Dashboard</h1><p>Internal, privacy-minimized operational evidence</p><p>Dashboard state at time <time datetime="{{ snapshot.telemetry.timestamp.isoformat() }}">{{ snapshot.telemetry.timestamp.strftime('%H:%M') }}</time></p></header>
+<main>{% if snapshot.retrospective %}<section aria-label="retrospective"><p class="layer confirmed">RETROSPECTIVE</p><p>This view is explicitly after the incident evidence boundary.</p></section>{% endif %}
+<section aria-labelledby="observed"><p class="layer">OBSERVED</p><h2 id="observed">Observed system state</h2><p>Observed — system health: direct telemetry observations only.</p><dl class="metrics">
+<dt>API latency</dt><dd>{{ '%.0f'|format(snapshot.telemetry.api_latency_ms) }} ms</dd><dt>Error rate</dt><dd>{{ '%.1f'|format(snapshot.telemetry.error_rate*100) }}%</dd><dt>Queue depth</dt><dd>{{ snapshot.telemetry.queue_depth }}</dd><dt>DB connections</dt><dd>{{ snapshot.telemetry.db_connections }}</dd><dt>Vendor latency</dt><dd>{{ '%.0f'|format(snapshot.telemetry.vendor_latency_ms) }} ms</dd><dt>Requests/minute</dt><dd>{{ '%.0f'|format(snapshot.telemetry.requests_per_minute) }}</dd><dt>Retry count</dt><dd>{{ snapshot.telemetry.retry_count }}</dd></dl></section>
+<section aria-labelledby="severity"><h2 id="severity">Deterministic status</h2><p class="status">{{ snapshot.severity }}</p><p>Severity is based on explicit operational thresholds, not ML probability.</p></section>
+<section aria-labelledby="capability"><h2 id="capability">ML capability</h2><table><thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Anomaly detector</td><td class="status">{{ snapshot.anomaly.metadata.availability.value }}</td></tr><tr><td>Incident classifier</td><td class="status">{{ snapshot.incident.metadata.availability.value }}</td></tr><tr><td>Integration failure model</td><td class="status">{{ snapshot.integration_failure.metadata.availability.value }}</td></tr></tbody></table><p>Overall ML capability: <strong>{{ snapshot.ml_capability_status }}</strong>. This is not Harbor system health.</p></section>
+<section aria-labelledby="anomaly"><p class="layer">MODEL SUGGESTS</p><h2 id="anomaly">Anomaly detection</h2><p>Model suggests — ML signals.</p>{% set s=snapshot.anomaly %}{% if s.metadata.availability.value == 'UNAVAILABLE' %}<p class="status">Prediction unavailable</p><p>Anomaly score: unavailable.</p>{% else %}<p>Status: <strong>{{ 'STALE — Anomaly detected' if s.metadata.availability.value == 'STALE' and s.is_anomaly else 'STALE — No anomaly detected' if s.metadata.availability.value == 'STALE' else 'Anomaly detected' if s.is_anomaly else 'No anomaly detected' }}</strong></p><p>Anomaly score: {{ '%.4f'|format(s.score) }} (unusualness score; not a probability)</p><p>Measures unusualness relative to the learned healthy baseline.</p>{% include 'signal_metadata.html' %}{% endif %}</section>
+<section aria-labelledby="incident"><p class="layer">MODEL SUGGESTS</p><h2 id="incident">Incident pattern</h2>{% set s=snapshot.incident %}{% if s.metadata.availability.value == 'UNAVAILABLE' %}<p class="status">Incident classifier unavailable — Prediction unavailable</p>{% else %}<p>Predicted pattern: <strong>{{ s.predicted_class }}</strong></p>{% if s.metadata.availability.value == 'STALE' %}<p class="status">Incident prediction: STALE — last updated {{ (s.metadata.prediction_age_seconds/60)|round|int }} minutes ago</p>{% endif %}<table><caption>Model probabilities — competing classes remain visible</caption><thead><tr><th scope="col">Pattern</th><th scope="col">Probability</th></tr></thead><tbody>{% for label,p in s.ordered_probabilities %}<tr><td>{{ label }}</td><td><span class="bar" style="--value:{{ p*100 }}%"></span> {{ '%.1f'|format(p*100) }}%</td></tr>{% endfor %}</tbody></table><p>Interpretation: <strong>{{ 'AMBIGUOUS' if s.ambiguous else 'TOP CLASS SEPARATED' }}</strong></p>{% if s.ambiguous %}<p>The model's top incident classes are close. Treat this as an ambiguous pattern classification.</p>{% endif %}{% include 'signal_metadata.html' %}{% endif %}</section>
+<section aria-labelledby="integration"><p class="layer">MODEL SUGGESTS</p><h2 id="integration">Integration request signal</h2>{% set s=snapshot.integration_failure %}{% if s.metadata.availability.value == 'UNAVAILABLE' %}<p class="status">Prediction unavailable</p>{% else %}<dl><dt>Failure probability</dt><dd>{{ '%.1f'|format(s.failure_probability*100) }}%</dd><dt>Threshold</dt><dd>{{ '%.2f'|format(s.threshold) }}</dd><dt>Predicted class</dt><dd>{{ 'Elevated failure risk' if s.elevated else 'Not elevated' }}</dd></dl>{% if s.metadata.availability.value == 'STALE' %}<p class="status">Integration prediction: STALE — last updated {{ (s.metadata.prediction_age_seconds/60)|round|int }} minutes ago</p>{% endif %}{% include 'signal_metadata.html' %}<p>This is a request-level prediction, not an incident diagnosis.</p>{% endif %}</section>
+<section aria-labelledby="versions"><h2 id="versions">Model versions</h2><table><thead><tr><th scope="col">Model</th><th scope="col">Version</th></tr></thead><tbody>{% for s in (snapshot.anomaly,snapshot.incident,snapshot.integration_failure) %}<tr><td>{{ s.metadata.model_name }}</td><td>{{ s.metadata.model_version or 'unavailable' }}</td></tr>{% endfor %}</tbody></table></section>
+<section aria-labelledby="explanation"><p class="layer">MODEL EXPLANATION</p><h2 id="explanation">Model explanation</h2>{% set s=snapshot.integration_failure %}{% if s.increased_factors or s.decreased_factors %}<h3>Factors that most increased the fitted failure score</h3><ul>{% for f in s.increased_factors %}<li>{{ f.feature_name }}: {{ '%+.3f'|format(f.contribution) }}</li>{% endfor %}</ul><h3>Factors that decreased the fitted score</h3><ul>{% for f in s.decreased_factors %}<li>{{ f.feature_name }}: {{ '%+.3f'|format(f.contribution) }}</li>{% endfor %}</ul>{% else %}<p>Explanation unavailable.</p>{% endif %}<p>These contributions explain the fitted model's output. They do not establish the real-world cause of a failure.</p></section>
+<section aria-labelledby="investigation"><h2 id="investigation">Suggested investigation</h2><p>Investigate — deterministic guidance. Application-defined deterministic guidance—not another model.</p>{% if snapshot.investigation_guidance %}<ul>{% for x in snapshot.investigation_guidance %}<li>{{ x }}</li>{% endfor %}</ul>{% else %}<p>Begin with direct telemetry, traces, and logs. No incident-class guidance is available.</p>{% endif %}<p>Dashboard warnings do not automatically justify paging.</p></section>
+<section aria-labelledby="confirmed"><p class="layer confirmed">CONFIRMED</p><h2 id="confirmed">Confirmed evidence</h2>{% if snapshot.confirmed_evidence %}{% for x in snapshot.confirmed_evidence %}<p>{{ x }}</p>{% endfor %}{% else %}<p>No root cause confirmed yet.</p>{% endif %}</section>
+{% block timeline %}{% endblock %}
+{% if snapshot.monitoring %}<section aria-labelledby="monitoring"><h2 id="monitoring">Model monitoring</h2><dl><dt>Prediction API latency</dt><dd>{{ snapshot.monitoring.prediction_api_latency_ms }} ms</dd><dt>Unknown categories</dt><dd>{{ snapshot.monitoring.unknown_categories }}</dd><dt>Drift status</dt><dd>{{ snapshot.monitoring.drift_status }}</dd><dt>Last labeled performance status</dt><dd>{{ snapshot.monitoring.labeled_performance_status }}</dd></dl><p>Input drift detected means investigate model operating conditions; it does not mean “model broken.”</p></section>{% endif %}
+</main></body></html>

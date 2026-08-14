@@ -52,5 +52,5 @@
 29. [Training the Incident Classifier](book/part-07-capstone/chapter-29-training-the-incident-classifier.md)
 30. [Building the ML Service](book/part-07-capstone/chapter-30-building-the-ml-service.md)
 31. [Integrating the Banking Application](book/part-07-capstone/chapter-31-integrating-the-banking-application.md)
-32. Building the Engineering Dashboard
+32. [Building the Engineering Dashboard](book/part-07-capstone/chapter-32-building-the-engineering-dashboard.md)
 33. Operating the Intelligent Digital Credit Union

@@ -300,6 +300,6 @@ MODEL VERSIONS
 FINAL CAPSTONE DASHBOARD
 ```
 
-It will address current state and history, direct observations versus suggestions, ambiguity, availability, versions, explanations, investigation guidance, stale predictions, and incident playback without claiming root-cause certainty. **Chapter 32 remains planned and is not implemented here.**
+It addresses current state and history, direct observations versus suggestions, ambiguity, availability, versions, explanations, investigation guidance, stale predictions, and incident playback without claiming root-cause certainty.
 
-[Previous: Chapter 30 — Building the ML Service](chapter-30-building-the-ml-service.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 32 — Building the Engineering Dashboard *(planned)*
+[Previous: Chapter 30 — Building the ML Service](chapter-30-building-the-ml-service.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 32 — Building the Engineering Dashboard](chapter-32-building-the-engineering-dashboard.md)
