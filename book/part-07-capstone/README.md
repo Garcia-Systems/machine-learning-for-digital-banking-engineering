@@ -5,12 +5,12 @@ Part VII integrates the engineering and machine-learning tools already built for
 - [Chapter 26 — The Harbor Incident](chapter-26-the-harbor-incident.md)
 - [Chapter 27 — Building the Telemetry Dataset](chapter-27-building-the-telemetry-dataset.md)
 - [Chapter 28 — Training the Anomaly Detector](chapter-28-training-the-anomaly-detector.md)
-- Chapter 29 — Training the Incident Classifier *(planned)*
+- [Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md)
 - Chapter 30 — Building the ML Service *(planned)*
 - Chapter 31 — Integrating the Banking Application *(planned)*
 - Chapter 32 — Building the Engineering Dashboard *(planned)*
 - Chapter 33 — Operating the Intelligent Digital Credit Union *(planned)*
 
-Chapters 26–28 are implemented. Chapters 29–33 remain planned.
+Chapters 26–29 are implemented. Chapters 30–33 remain planned.
 
 [Back to the complete contents](../../CONTENTS.md)
