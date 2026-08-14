@@ -49,7 +49,7 @@
 26. [The Harbor Incident](book/part-07-capstone/chapter-26-the-harbor-incident.md)
 27. [Building the Telemetry Dataset](book/part-07-capstone/chapter-27-building-the-telemetry-dataset.md)
 28. [Training the Anomaly Detector](book/part-07-capstone/chapter-28-training-the-anomaly-detector.md)
-29. Training the Incident Classifier
+29. [Training the Incident Classifier](book/part-07-capstone/chapter-29-training-the-incident-classifier.md)
 30. Building the ML Service
 31. Integrating the Banking Application
 32. Building the Engineering Dashboard

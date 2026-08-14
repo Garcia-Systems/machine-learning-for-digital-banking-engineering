@@ -280,6 +280,6 @@ normal | vendor_degradation | database_pressure
 traffic_spike | application_regression
 ```
 
-It will revisit Chapter 5 with the capstone dataset, artifact metadata, confusion matrix, probabilities, ambiguity, and timeline evolution—without treating a predicted class as confirmed root cause. **Chapter 29 remains planned and is not implemented here.**
+It revisits Chapter 5 with the capstone feature contract, artifact metadata, confusion matrix, probabilities, ambiguity, and timeline evolution—without treating a predicted class as confirmed root cause.
 
-[Previous: Chapter 27 — Building the Telemetry Dataset](chapter-27-building-the-telemetry-dataset.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · Next: Chapter 29 — Training the Incident Classifier *(planned)*
+[Previous: Chapter 27 — Building the Telemetry Dataset](chapter-27-building-the-telemetry-dataset.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md)
