@@ -1,5 +1,7 @@
 # Chapter 29 — Training the Incident Classifier
 
+![Chapter 29 — Training the Incident Classifier](../../images/chapters/chapter-29.png)
+
 > **Part VII — Capstone: The Intelligent Digital Credit Union**
 
 Chapter 28 successfully trained Harbor Federal Credit Union's anomaly detector. During the fictional capstone incident it begins reporting `anomaly = true`. That means only:

@@ -2,6 +2,9 @@
 
 [← Chapter 1](chapter-01-the-digital-banking-data-landscape.md) · [Part I contents](README.md) · [Book contents](../../CONTENTS.md) · [Chapter 3 →](chapter-03-the-machine-learning-pipeline.md)
 
+![Chapter 2 — From Engineering Problem to ML Problem](../../images/chapters/chapter-02.png)
+
+
 > **Central question:** How do we turn a real engineering problem into a machine-learning problem that can actually be measured, trained, and evaluated?
 
 ## Opening scenario: observations are not a learning objective

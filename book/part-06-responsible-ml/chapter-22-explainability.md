@@ -1,5 +1,7 @@
 # Chapter 22 — Explainability
 
+![Chapter 22 — Explainability](../../images/chapters/chapter-22.png)
+
 A Harbor Federal Credit Union developer receives:
 
 ```text

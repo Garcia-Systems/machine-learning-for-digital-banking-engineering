@@ -1,5 +1,7 @@
 # Chapter 14 — Predicting System Demand
 
+![Chapter 14 — Predicting System Demand](../../images/chapters/chapter-14.png)
+
 > Can Harbor use recent system behavior and time context to estimate near-future digital request volume?
 
 This chapter introduces **regression** through capacity awareness, traffic forecasting, performance planning, and proactive monitoring. It does not forecast financial markets or individual member behavior. All observations are deterministic synthetic teaching data—not real traffic or a claim about actual credit-union systems.

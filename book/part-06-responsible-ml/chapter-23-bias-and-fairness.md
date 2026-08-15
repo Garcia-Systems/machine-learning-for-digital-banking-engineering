@@ -2,6 +2,9 @@
 
 [Previous: Chapter 22 — Explainability](chapter-22-explainability.md) · [Next: Chapter 24 — Human-in-the-Loop Systems](chapter-24-human-in-the-loop-systems.md) · [Back to Part VI](README.md) · [Complete contents](../../CONTENTS.md)
 
+![Chapter 23 — Bias and Fairness](../../images/chapters/chapter-23.png)
+
+
 Harbor Federal Credit Union needs to know whether an advisory model behaves differently across the technical environments in which it runs. A single aggregate metric can conceal weak behavior for one fictional vendor, endpoint, or channel. This chapter evaluates those operational slices without introducing demographic attributes or turning a technical comparison into a judgment about people.
 
 ## Learning objectives

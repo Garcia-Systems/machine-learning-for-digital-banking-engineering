@@ -1,5 +1,7 @@
 # Chapter 9 — Predicting Digital Journey Abandonment
 
+![Chapter 9 — Predicting Digital Journey Abandonment](../../images/chapters/chapter-09.png)
+
 > Part III — Machine Learning for Member Digital Experiences
 
 [Part III overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 8](chapter-08-understanding-member-behavior.md)

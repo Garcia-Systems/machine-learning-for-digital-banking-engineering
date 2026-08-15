@@ -1,5 +1,7 @@
 # Chapter 20 — Building an ML-Assisted Monitoring Dashboard
 
+![Chapter 20 — Building an ML-Assisted Monitoring Dashboard](../../images/chapters/chapter-20.png)
+
 Harbor Federal Credit Union is fictional. Its telemetry, incidents, vendors, members, and model results are synthetic educational material.
 
 > **Central question:** How should Harbor present ML predictions alongside ordinary system telemetry so developers can use them effectively during monitoring and troubleshooting?

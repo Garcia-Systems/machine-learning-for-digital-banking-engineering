@@ -1,5 +1,7 @@
 # Chapter 8 — Understanding Member Behavior
 
+![Chapter 8 — Understanding Member Behavior](../../images/chapters/chapter-08.png)
+
 > Part III — Machine Learning for Member Digital Experiences
 
 [Part III overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 7](../part-02-production-troubleshooting/chapter-07-predicting-integration-failures.md)

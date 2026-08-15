@@ -1,5 +1,7 @@
 # Chapter 24 — Human-in-the-Loop Systems
 
+![Chapter 24 — Human-in-the-Loop Systems](../../images/chapters/chapter-24.png)
+
 Harbor Federal Credit Union's operational review model returns:
 
 ```text

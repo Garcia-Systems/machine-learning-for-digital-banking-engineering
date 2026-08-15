@@ -1,5 +1,7 @@
 # Chapter 32 — Building the Engineering Dashboard
 
+![Chapter 32 — Building the Engineering Dashboard](../../images/chapters/chapter-32.png)
+
 During the Chapter 26 incident, **Harbor Federal Credit Union** engineers have API latency, error rate, queue depth, database connections, vendor latency, request volume, and retries. They also have an anomaly score and flag, incident probabilities and ambiguity, a request-failure probability, three availability states, three versions, three prediction times, and a local explanation. Showing every value without its meaning would add confusion rather than understanding.
 
 This chapter asks:

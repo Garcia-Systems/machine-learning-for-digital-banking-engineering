@@ -1,5 +1,7 @@
 # Chapter 19 — Integrating Machine Learning with PHP
 
+![Chapter 19 — Integrating Machine Learning with PHP](../../images/chapters/chapter-19.png)
+
 > **Central question:** How can a PHP full-stack application consume Harbor's Python ML prediction service safely without making the machine-learning service a critical authority for core banking behavior?
 
 [Previous: Chapter 18](chapter-18-serving-a-model-through-an-api.md) · [Back to Part V](README.md) · [Complete contents](../../CONTENTS.md)

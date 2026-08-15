@@ -1,5 +1,7 @@
 # Chapter 15 — Database Performance Prediction
 
+![Chapter 15 — Database Performance Prediction](../../images/chapters/chapter-15.png)
+
 A Harbor developer is troubleshooting intermittent latency in an account-history endpoint:
 
 ```text

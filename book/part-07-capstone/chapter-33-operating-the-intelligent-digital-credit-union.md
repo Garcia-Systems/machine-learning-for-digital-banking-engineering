@@ -1,5 +1,7 @@
 # Chapter 33 — Operating the Intelligent Digital Credit Union
 
+![Chapter 33 — Operating the Intelligent Digital Credit Union](../../images/chapters/chapter-33.png)
+
 The **Harbor Federal Credit Union** engineering team now owns the complete ML-assisted architecture:
 
 ```text

@@ -1,5 +1,7 @@
 # Chapter 6 — Finding the Signals That Matter
 
+![Chapter 6 — Finding the Signals That Matter](../../images/chapters/chapter-06.png)
+
 > Part II — Machine Learning for Production Troubleshooting
 
 [Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 5](chapter-05-incident-classification.md) · [Next: Chapter 7](chapter-07-predicting-integration-failures.md)

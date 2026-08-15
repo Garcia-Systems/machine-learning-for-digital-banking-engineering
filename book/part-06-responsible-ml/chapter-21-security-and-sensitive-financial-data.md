@@ -1,5 +1,7 @@
 # Chapter 21 — Security and Sensitive Financial Data
 
+![Chapter 21 — Security and Sensitive Financial Data](../../images/chapters/chapter-21.png)
+
 > **Part VI — Responsible Machine Learning in Financial Systems**
 
 Harbor Federal Credit Union is entirely fictional. Every name, payload, dataset, and result in this chapter is synthetic educational material.

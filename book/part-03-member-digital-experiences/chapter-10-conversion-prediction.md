@@ -1,5 +1,7 @@
 # Chapter 10 — Conversion Prediction
 
+![Chapter 10 — Conversion Prediction](../../images/chapters/chapter-10.png)
+
 Harbor Federal Credit Union has redesigned the product-information page for its
 fictional **Harbor Horizon Savings** product. One visit follows this path:
 

@@ -1,5 +1,7 @@
 # Chapter 18 — Serving a Model Through an API
 
+![Chapter 18 — Serving a Model Through an API](../../images/chapters/chapter-18.png)
+
 Harbor Federal Credit Union now has:
 
 ```text
