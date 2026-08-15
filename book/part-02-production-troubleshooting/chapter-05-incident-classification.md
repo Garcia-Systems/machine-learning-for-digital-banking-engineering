@@ -1,5 +1,7 @@
 # Chapter 5 — Incident Classification
 
+![Chapter 5 — Incident Classification](../../images/chapters/chapter-05.png)
+
 > Part II — Machine Learning for Production Troubleshooting
 
 [Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 4](chapter-04-detecting-abnormal-application-behavior.md)

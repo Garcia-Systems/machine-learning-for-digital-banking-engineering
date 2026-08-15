@@ -1,5 +1,7 @@
 # Chapter 7 — Predicting Integration Failures
 
+![Chapter 7 — Predicting Integration Failures](../../images/chapters/chapter-07.png)
+
 > Part II — Machine Learning for Production Troubleshooting
 
 [Part II overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 6](chapter-06-finding-the-signals-that-matter.md)

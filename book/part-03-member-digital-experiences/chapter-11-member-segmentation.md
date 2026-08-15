@@ -1,5 +1,7 @@
 # Chapter 11 — Member Segmentation
 
+![Chapter 11 — Member Segmentation](../../images/chapters/chapter-11.png)
+
 > **Central question:** Can Harbor discover recurring patterns of digital behavior
 > without defining the groups in advance?
 

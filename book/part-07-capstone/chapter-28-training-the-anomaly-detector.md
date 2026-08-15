@@ -1,5 +1,7 @@
 # Chapter 28 — Training the Anomaly Detector
 
+![Chapter 28 — Training the Anomaly Detector](../../images/chapters/chapter-28.png)
+
 Chapter 27 created a trustworthy, time-aligned dataset for fictional **Harbor Federal Credit Union**. It contains healthy operation, early degradation, vendor degradation, compound pressure, and recovery. This chapter asks:
 
 > Can Harbor train a reproducible anomaly detector on healthy capstone operation and use it to identify when the incident timeline begins departing from that learned baseline?

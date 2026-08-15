@@ -2,6 +2,9 @@
 
 [Previous: Chapter 29 — Training the Incident Classifier](chapter-29-training-the-incident-classifier.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md) · [Next: Chapter 31 — Integrating the Banking Application](chapter-31-integrating-the-banking-application.md)
 
+![Chapter 30 — Building the ML Service](../../images/chapters/chapter-30.png)
+
+
 **Central question:** How can Harbor expose several independently trained ML models through one reliable, versioned Python service without coupling the banking application to scikit-learn internals?
 
 Harbor Federal Credit Union now has three useful models. The capstone anomaly detector asks, “Does current telemetry differ substantially from the learned healthy baseline?” The incident classifier asks, “Which known incident pattern does current telemetry most resemble?” The integration-failure model asks, “How strongly does this request resemble historical request-failure examples?”

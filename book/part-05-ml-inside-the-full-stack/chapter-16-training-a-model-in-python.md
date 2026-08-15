@@ -1,5 +1,7 @@
 # Chapter 16 — Training a Model in Python
 
+![Chapter 16 — Training a Model in Python](../../images/chapters/chapter-16.png)
+
 > **Part V — Putting Machine Learning Inside the Full Stack**
 
 [Part V overview](README.md) · [Complete contents](../../CONTENTS.md) · [Previous: Chapter 15](../part-04-banking-operations/chapter-15-database-performance-prediction.md)

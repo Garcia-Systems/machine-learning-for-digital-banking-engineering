@@ -1,5 +1,7 @@
 # Chapter 12 — Transaction Anomaly Detection
 
+![Chapter 12 — Transaction Anomaly Detection](../../images/chapters/chapter-12.png)
+
 > **Central question:** Can Harbor identify fictional transaction-like records that
 > differ substantially from established operational patterns?
 

@@ -1,5 +1,7 @@
 # Chapter 13 — Classification and Risk Signals
 
+![Chapter 13 — Classification and Risk Signals](../../images/chapters/chapter-13.png)
+
 Chapter 12 asked whether a transaction-like observation differed from a learned baseline. Now imagine **Harbor Federal Credit Union** also has fictional historical review records: some observations were routed to additional operational review, while others followed normal automated processing.
 
 > **Central question:** Given labeled fictional operational examples, can Harbor estimate whether a transaction-like observation should be routed for additional manual review?

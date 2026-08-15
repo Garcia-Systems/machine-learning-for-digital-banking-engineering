@@ -1,5 +1,7 @@
 # Chapter 31 — Integrating the Banking Application
 
+![Chapter 31 — Integrating the Banking Application](../../images/chapters/chapter-31.png)
+
 > **Central question:** How can Harbor's PHP application consume several independent ML signals through one maintainable application boundary while keeping all core banking behavior deterministic?
 
 [Previous: Chapter 30 — Building the ML Service](chapter-30-building-the-ml-service.md) · [Back to Part VII](README.md) · [Complete contents](../../CONTENTS.md)

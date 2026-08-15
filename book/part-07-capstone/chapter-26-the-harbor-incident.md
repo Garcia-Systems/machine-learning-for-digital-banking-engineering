@@ -1,5 +1,7 @@
 # Chapter 26 — The Harbor Incident
 
+![Chapter 26 — The Harbor Incident](../../images/chapters/chapter-26.png)
+
 > **Part VII — Capstone: The Intelligent Digital Credit Union**
 
 At fictional **Harbor Federal Credit Union**, an identity-verification workflow starts an ordinary Wednesday morning looking healthy. Thirty minutes later, some requests fail. Several models contribute useful signals—but none observes root cause directly.

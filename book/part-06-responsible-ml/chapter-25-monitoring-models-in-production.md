@@ -1,5 +1,7 @@
 # Chapter 25 — Monitoring Models in Production
 
+![Chapter 25 — Monitoring Models in Production](../../images/chapters/chapter-25.png)
+
 > Once Harbor deploys a model, how can engineers tell whether the model and its surrounding system are still behaving as expected?
 
 **Harbor Federal Credit Union** is fictional. Every request, vendor, outcome, and production period in this chapter is synthetic educational material.

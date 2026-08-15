@@ -1,5 +1,7 @@
 # Chapter 27 — Building the Telemetry Dataset
 
+![Chapter 27 — Building the Telemetry Dataset](../../images/chapters/chapter-27.png)
+
 > **Part VII — Capstone: The Intelligent Digital Credit Union**
 
 Chapter 26 showed the fictional **Harbor Federal Credit Union** incident as engineers experienced it over time. Behind that timeline are independent application, database, vendor, trace, and request-outcome records. A developer proposes: “Let's join everything by request ID and timestamp and train on all of it.” That is attractive—and wrong whenever a joined fact arrived after the prediction.

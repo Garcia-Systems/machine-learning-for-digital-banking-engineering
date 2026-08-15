@@ -2,6 +2,9 @@
 
 [← Chapter 2](chapter-02-from-engineering-problem-to-ml-problem.md) · [Part I contents](README.md) · [Book contents](../../CONTENTS.md)
 
+![Chapter 3 — The Machine Learning Pipeline](../../images/chapters/chapter-03.png)
+
+
 > **Central question:** Once we have defined an ML problem, how do historical observations become a model that can make predictions about new observations?
 
 ## Opening scenario: from a question to a prediction

@@ -1,5 +1,7 @@
 # Chapter 17 — Evaluating the Model
 
+![Chapter 17 — Evaluating the Model](../../images/chapters/chapter-17.png)
+
 Harbor Federal Credit Union now has a reproducible training workflow. The command produces `model.joblib` and `metadata.json`, and prints several metrics. A developer sees:
 
 ```text
